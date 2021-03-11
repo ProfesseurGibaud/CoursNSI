@@ -1,0 +1,635 @@
+\chapter{Algorithmique et programmation 1}
+
+\section{Introduction}
+
+\subsection{Définition}
+
+À l'ère du numérique, des smartphones et des réseaux sociaux, qui n'a pas entendu parler des algorithmes? Et pour cause, ils sont omniprésents dans notre quotidien. Ils sont à la base de nos applis et de nos ordinateurs, de la télécommunication et d'internet. Sans eux, la technologie contemporaine ne pourrait exister.
+
+
+
+Pourtant, si tout le monde a entendu parler des algorithmes, très peu sont capables de dire ce qu'est un algorithme. Cette méconnaissance entraîne tantôt de la fascination, tantôt de la crainte, alors que la notion d'algorithme n'est peut-être pas aussi complexe qu'on pourrait le penser. D'ailleurs, beaucoup de personnes utilisent directement des algorithmes sans le savoir. Peut-être seriez vous capable de citer des exemples d'algorithmes que vous utilisez vous-même régulièrement?
+
+Si les algorithmes sont à la base de la programmation informatique, et donc du fonctionnement de nos applis, leur première utilisation est bien antérieure à l'invention de l'ordinateur. D'ailleurs, celle-ci précède même la vie du mathématicien persan Muhammad Ibn Mūsā al-Khuwārizmī (circa 780-850) dont le nom sous sa forme latinisée, Algorizmi, est à l'origine du mot algorithme. En effet, la plus ancienne trace retrouvée de la description d'un algorithme date de plus de 4500 ans. Il s'agit d'une tablette d'argile sumérienne qui détaille un algorithme de division.
+
+\begin{definition}
+	Un \textit{\textbf{algorithme}} est une séquence \textbf{\textit{finie}} et \textbf{\textit{univoque}}\footnote{Qui ne souffre pas d'ambiguïté.} d'instructions permettant de résoudre une classe de problèmes\footnote{N'importe quel problème d'un certain type.}.
+\end{definition}
+
+\begin{example}
+	L'addition avec retenue est un algorithme que vous connaissez et utilisez depuis le primaire! Il permet d'additionner deux entiers positifs quels qu'ils soient.
+\end{example}
+
+\subsection{Le code}
+
+Les algorithmes sont importants en mathématiques comme en informatique parce qu'ils définissent des protocoles très précis permettant d'accomplir une tâche particulière autant de fois que nécessaire, sans jamais se tromper, ni avoir à se demander comment faire : il suffit de suivre les instructions. C'est un peu comme une recette de cuisine mais pour laquelle on est certain que le plat sera réussi à chaque fois si l'on suit correctement les étapes. Pour garantir cette réussite systématique, l'algorithme doit être présenté dans un langage simplifié qui ne tolère pas les double-sens ou les approximations : le \textit{\textbf{code}}. C'est en cela qu'un algorithme diffère d'une recette de cuisine ou d'un mode d'emploi qui sont eux écrits en langage naturel.
+
+Il existe de très nombreux langages différents pour écrire du code, notamment en informatique, où l'on parle de \textit{\textbf{langage de programmation}}. Lorsqu'un algorithme est écrit dans un langage de programmation particulier, on dit qu'il est \textit{\textbf{implémenté}} dans ce langage (on utilise aussi le terme \textit{\textbf{implémentation}}). Dans ce cours, nous utiliserons le langage de programmation Python qui est au programme du lycée. Nous utiliserons également le \textit{\textbf{pseudo-code}} qui est un langage intermédiaire entre le langage naturel et le code à proprement parler.
+
+\begin{example}
+	Voici un exemple d'une séquence d'instructions en pseudo-code et de son implémentation en Python.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+	\begin{lstlisting}[language=Pseudo,linewidth = 6cm]
+Pour k allant de 0 à 9
+    Faire
+    |Afficher k
+Fin pour\end{lstlisting}
+	\end{varwidth}\hspace{2cm}
+\begin{varwidth}[t]{.5\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 5cm]
+for k in range(10):
+    print(k)\end{lstlisting}\end{varwidth}\end{center}
+	Pour bien distinguer entre les deux, la séquence en pseudo-code et la séquence en Python sont présentées avec des styles graphiques différents: \begin{itemize}
+	 	\item le pseudo-code dans un rectangle blanc à bords droits;
+	 	\item le code Python dans un rectangle gris à bords ronds.
+	 \end{itemize}
+Cette convention sera maintenue tout au long de ce cours afin d'éviter toute confusion entre les deux.
+\end{example}
+
+\subsection{Objectifs du chapitre}
+
+Dans ce chapitre, vous apprendrez les principes de base pour l'élaboration d'un algorithme, son écriture en pseudo-code ainsi que son implémentation en Python. Vous serez également amenés à écrire vos propres algorithmes. Enfin, la notion de simulation sera introduite en fin de chapitre \ref{chap_algo2}.
+
+ Quelques exercices très simples ont été intégrées dans le cours, et vous êtes fortement encouragées à vérifier les réponses de ces exercices par vous mêmes, en exécutant les instructions correspondantes sur votre ordinateur. Ainsi vous pourrez pleinement appréhender les nouveaux objets que vous découvrirez au fur et à mesure de votre lecture de ce cours.
+
+\subsection{Exécuter un code Python en Console}
+
+Pour exécuter un code Python, il faut d'abord installer Python sur votre machine. Aujourd'hui, on peut installer Python sur un ordinateur, une tablette, un téléphone portable et même une calculatrice programmable. En fonction de votre machine et de votre système d'exploitation (Ubuntu/Linux, Windows, Mac OS X, ...), il existe de nombreuses façons d'installer Python et de nombreux \bi{environnements de développement} différents qui permettent de visualiser le code que l'on programme avant de l'exécuter. Si vous vous y connaissez déjà en programmation, vous êtes libres de choisir l'environnement qui vous convient le mieux. Pour les autres, nous vous conseillons l'utilisation de l'environnement de développement Pyzo installé sur votre ordinateur via la distribution de base Python3\footnote{Une distribution contient à la fois Python et un ensemble de bibliothèques Python (voir section \ref{bibliotheques})}.
+
+Pour installer Python, vous pouvez télécharger l'installateur à partir de la page web: \href{https://www.python.org/downloads/}{https://www.python.org/downloads/}. En principe, votre système d'exploitation sera reconnu automatiquement par le site internet, si ce n'est pas le cas choisissez l'onglet correspondant à votre système d'exploitation (Windows, macOs ou Linux). Ensuite, cliquez sur le lien de téléchargement correspondant à la version de Python 3 la plus récente. Une fois l'installateur téléchargé, exécutez le fichier et suivez les instructions correspondantes. Il vous suffira ensuite de lancer l'application Pyzo pour programmer et exécuter du code Python. Vous pourrez télécharger Pyzo à partir de la page web : \href{https://pyzo.org/start.html}{https://pyzo.org/start.html}.
+
+Pour une prise en main rapide de l'environnement Pyzo, vous pouvez visionner l'un des nombreux tutoriels disponibles sur internet. 
+
+\section{Variables et instructions élémentaires}
+
+\subsection{Types de variables}
+
+En informatique, pour stocker les données, on utilise des \textit{\textbf{variables}}. Une variable est définie par un nom qui permet de l'identifier de manière unique. Ce nom permet à l'ordinateur de retrouver la donnée contenue dans sa mémoire qui correspond à la \textit{\textbf{valeur}} de la variable. Chaque variable est caractérisée par un \textit{\textbf{type}} qui correspond au type de donnée qu'elle contient. Il existe de nombreux types de variables différents en informatique mais nous n'en étudierons que quatre à ce stade.
+
+\subsubsection{Type booléen}
+
+Une variable de \bi{type booléen} (ou \bi{variable booléenne}) est une variable qui prend l'une des deux valeurs: {\ttfamily\bf vrai} ou {\ttfamily\bf faux}. Le terme booléen est un hommage au grand mathématicien et logicien anglais George Boole (1815-1864) considéré comme le père de la logique moderne. En Python, le type booléen se note «\texttt{bool}» et les valeurs associées «\texttt{True}» et «\texttt{False}» respectivement.
+
+\subsubsection{Type entier}
+
+Le \bi{type entier} désigne, comme son nom l'indique, des variables entières (qui appartiennent donc à l'ensemble $\N$)\footnote{Attention toutefois, un ordinateur est un système fini et ne peut donc stocker des variables sans limite de taille. En pratique, la taille maximale d'une variable de type entière varie d'un langage de programmation à un autre.}. En Python, le type entier se note «\texttt{int}» (contraction de «\textit{integer}» qui signifie entier en anglais).
+
+\subsubsection{Type flottant}
+
+Une variable de \bi{type flottant} (ou \bi{variable flottante}) contient un nombre qui s'écrit avec un nombre fini de chiffres après la virgule\footnote{L'adjectif flottant qualifie en réalité la virgule dont la position n'est pas fixée (et peut donc «\textit{flotter}») en mémoire pour ce type de variables.}. Le type flottant se note «\texttt{float}» en Python (qui signifie flotter en anglais). Attention, la virgule est remplacée par un point dans l'écriture anglo-saxonne des nombres et donc, en particulier, dans le langage Python.
+
+\subsubsection{Type chaîne de caractères}
+
+Une variable de \bi{type chaîne de caractères} contient du texte. Le terme \bi{caractère} désigne les caractères typographiques que sont les lettres (minuscules ou majuscules, avec ou sans accents), les chiffres, les signes de ponctuation, etc. Dans le langage Python, ce type est noté «\texttt{str}» (contraction de «\textit{string}» qui signifie fil ou enchaînement en anglais). Les chaînes de caractères s'écrivent en Python par du texte entre guillemets simples (par exemple: \texttt{\textquotesingle Ceci est un string en Python.\textquotesingle}) ou guillemets doubles (par exemple: \texttt{"Ceci est également un string en Python!"}).
+
+\subsection{Affectation}
+
+\begin{definition}
+	L'\bi{affectation} d'une valeur à une variable est l'action de donner une valeur à cette variable.
+\end{definition}
+Pour indiquer que l'on affecte la valeur \texttt{x} à la variable \texttt{a} en pseudo-code, on note : 
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 3cm]
+a = x
+\end{lstlisting}\end{varwidth}\end{center}
+En Python, on note :
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 3cm]
+a = x\end{lstlisting}\end{varwidth}\end{center}
+Attention, le signe « \texttt{=} » n'a donc pas le même sens en Python qu'en mathématiques! En particulier, en Python, « \texttt{a = x} » n'a pas le même sens que « \texttt{x = a} ».
+
+En programmation, il est possible d'affecter et de \bi{réaffecter} des variables. Dans ce cas, c'est la dernière affectation qui prévaut sur les autres. On peut également mettre à jour une variable en lui réaffectant une valeur qui dépend d'elle-même.
+
+\begin{exercise}
+	Le code Python affecte plusieurs valeurs successives à \texttt{a} en réalisant plusieurs affichages (la fonction «\texttt{print}» permet de réaliser un affichage en Python).
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]	
+a = -3
+a = 1
+print(a)
+a = a+1
+print(a)\end{lstlisting}\end{varwidth}\end{center}
+	Que va renvoyer la Console Python lorsque l'on exécute ce code?
+\end{exercise}
+
+\subsection{Opérations élémentaires}
+
+À chaque type est associé un ensemble d'opérations. Vous trouverez ici la liste des opérations les plus élémentaires associées aux quatre types décrits précédemment. Tous les types admettent également deux opérations universelles qui sont l'opération de \bi{test d'égalité} et l'opération de \bi{test de différence}. L'opération de test d'égalité, notée « {\ttfamily\bf=} » en pseudo-code et « \texttt{==} » en Python, permet de vérifier si deux variables sont égales. L'opération de test de différence, notée « {\ttfamily\bf$\neq$} » en pseudo-code et « \texttt{!=} » en Python, permet de vérifier si deux variables sont différentes.
+
+\begin{exercise}
+	Le code Python suivant affecte la valeur $2$ à la variable \texttt{a} et la valeur $-3$ à la variable \texttt{b}.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+a = 2
+b = -3
+print(a == b)
+print(a != b)\end{lstlisting}\end{varwidth}\end{center}
+Que va renvoyer la Console Python lorsque l'on exécute ce code?
+\end{exercise}
+
+\subsubsection{Opérations sur les flottants}
+
+Pour les flottants, on peut utiliser les opérations classiques entre deux nombres: l'addition, la soustraction, la multiplication, la division, l'élévation à la puissance; ainsi que les comparateurs d'ordre: inférieur ou égal, inférieur strict, supérieur ou égal, supérieur strict. La liste des symboles utilisés en Python figure dans le tableau ci-dessous:
+\begin{center}
+	\begin{tabular}{|C{5cm}|C{5cm}|N}
+		\hline
+		\multicolumn{1}{|c|}{Opération mathématique} & Expression Python &\\[15pt]\hline
+		$a+b$ & \texttt{a + b} &\\[15pt]\hline
+		$a - b$ & \texttt{a - b}&\\[15pt]\hline
+		$a\times b$ & \texttt{a * b}&\\[15pt]\hline
+		$a\div b$ & \texttt{a / b}&\\[15pt]\hline
+		$a^b$ & \texttt{a ** b}&\\[15pt]\hline
+		$a\leq b$ & \texttt{a <= b}&\\[15pt]\hline
+		$a < b$ & \texttt{a < b}&\\[15pt]\hline
+		$a\geq b$ & \texttt{a >= b}&\\[15pt]\hline
+		$a > b$ & \texttt{a > b}&\\[15pt]\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection{Opérations sur les entiers}
+
+Parmi les opérations standards entre deux entiers, on retrouve toutes les opérations décrites pour les flottants auxquelles on peut ajouter le quotient et le reste par la division euclidienne (c'est-à-dire la division entière).
+\begin{center}
+	\begin{tabular}{|C{5cm}|C{5cm}|N}
+		\hline
+		\multicolumn{1}{|c|}{Opération mathématique} & Expression Python &\\[15pt]\hline
+		Quotient de la division & \multirow{2}{*}{\texttt{a // b}} &\\
+		entière de $a$ par $b$ & &\\\hline
+		Reste de la division & \multirow{2}{*}{\texttt{a \% b}}&\\
+    	entière de $a$ par $b$ & &\\\hline
+	\end{tabular}
+\end{center}
+
+\newpage
+
+\begin{exercise}
+	On considère le code Python suivant.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+a = 3 - 1
+b = 1 + 2
+c = a ** 3
+d = c / 5
+e = c // 5
+f = (a <= b)\end{lstlisting}\end{varwidth}\end{center}
+Que valent les variables \texttt{a}, \texttt{b}, \texttt{c}, \texttt{d}, \texttt{e} et \texttt{f}?
+\end{exercise}
+
+\subsubsection{Opérations sur les booléens}
+
+Les opérations standards sur les booléens sont:
+\begin{itemize}
+	\item la \bi{négation} associée au mot-clé «{\ttfamily\bf non}»;
+	\item la \bi{conjonction} associée au mot-clé «{\ttfamily\bf et}»;
+	\item la \bi{disjonction} associée au mot-clé «{\ttfamily\bf ou}».
+\end{itemize}
+Elles sont implémentées en Python à l'aide des opérateurs «\texttt{not}», «\texttt{and}» et «\texttt{or}» respectivement.
+Si \texttt{a} et \texttt{b} sont deux variables booléennes, on a:
+\begin{itemize}
+	\item \texttt{{\bf non}(a)} vaut {\ttfamily\bf vrai} si et seulement si \texttt{a} vaut {\ttfamily\bf faux};
+	\item \texttt{a {\bf et} b} vaut {\ttfamily\bf vrai} si et seulement si les deux variables \texttt{a} et \texttt{b} sont égales à {\ttfamily\bf vrai};
+	\item \texttt{a {\bf ou} b} vaut {\ttfamily\bf vrai} si et seulement si l'une au moins des deux variables \texttt{a} ou \texttt{b} vaut {\ttfamily\bf vrai}.
+\end{itemize}
+
+\begin{exercise}
+	Analysez le code Python qui suit.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 6cm]
+a = (0 < 1) or (0 > 2)
+b = not (1 < 2)
+c = a and b
+\end{lstlisting}\end{varwidth}\end{center}
+	Quelles valeurs prennent les variables booléennes \texttt{a}, \texttt{b} et \texttt{c}?
+\end{exercise}
+
+\subsubsection{Opérations sur les chaînes de caractère}
+
+Il existe un certain nombre d'opérations sur les chaînes de caractère en Python mais nous n'en considérons qu'une ici: la \bi{concaténation}. La concaténation permet de créer une nouvelle chaîne de caractère à partir de deux chaînes de caractère \texttt{a} et \texttt{b}, en mettant les caractères de \texttt{b} à la suite des caractères de \texttt{a}. La concaténation de \texttt{a} et \texttt{b} en Python se note \texttt{a + b}.
+
+\newpage
+
+\begin{exercise}
+	On considère le code Python suivant.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 6cm]
+a = "math"
+b = a + "ematiques"
+c = "ha"
+c = c + c
+\end{lstlisting}\end{varwidth}\end{center}
+Que valent les variables \texttt{a}, \texttt{b} et \texttt{c}?
+\end{exercise}
+
+\subsection{Instructions conditionnelles}
+
+\begin{remark}
+	Un père dit à son enfant : "\textbf{Si} tu finis tes légumes, \textbf{Alors} tu auras un dessert". L'enfant ne finit pas ses légumes mais le père donne quand même à son enfant un dessert. Le père a-t-il menti ?
+\end{remark}
+
+
+La réponse est non. Et ce n'est pas pour des raisons d'éducation ou de morale. Le père a dit ce qu'il ferait si son enfant finit son dessert mais il n'a rien dit si il ne finissait pas son dessert.
+
+
+Dans un algorithme, on peut choisir qu'une instruction ne s'exécute que si certaines conditions sont remplies. En pseudo-code, on peut utiliser les mots-clés {\ttfamily\bf{si}} et {\ttfamily\bf{alors}} pour indiquer une condition et la séquence d'instructions à exécuter si la condition est remplie. On peut également utiliser le mot-clé {\ttfamily\bf{Fin si}} pour indiquer la fin de la séquence d'instructions conditionnelles. Une instruction conditionnelle peut donc s'écrire en pseudo-code sous la forme suivante:
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 7cm]
+Si la condition est vraie
+    Alors faire
+    |instructions
+Fin Si
+\end{lstlisting}\end{varwidth}\end{center}
+
+En Python, on utilise la commande «\texttt{if}» associé à l'utilisation des deux points «\texttt{:}» et d'une \bi{indentation} (décalage vers la droite des lignes d'instructions\footnote{L'indentation en Python peut correspondre à une tabulation ou à un nombre fixe d'espaces. Toutefois, il est important qu'une même indentation soit utilisée pour un même groupe d'instructions. Dans l'usage, une indentation formée de 4 espaces est priviligiée.}), selon la forme suivante:
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm]
+if condition :
+    instructions
+\end{lstlisting}\end{varwidth}\end{center}
+Attention, les règles pour les deux points et l'indentation ne sont pas facultatives et le code ne fonctionnera pas correctement si elles ne sont pas respectées. Par ailleurs, l'indentation doit courir sur l'ensemble des instructions couvertes par la condition (donc éventuellement sur plusieurs lignes).
+
+On peut également différencier entre un certain nombre de cas en utilisant les mots-clés « {\ttfamily\bf sinon si} » et « {\ttfamily\bf{sinon}} » en pseudo-code ou les commandes « \texttt{elif} » et « \texttt{else} » en Python, selon le schéma qui suit:
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 7cm]
+Si la condition1 est vraie
+    Alors faire
+    |instructions1
+Si la condition2 est vraie
+    Alors faire
+    |instructions2
+Si la condition3 est vraie
+    Alors faire
+    |instructions3
+Sinon
+    Faire
+    |instructions4
+Fin si
+\end{lstlisting}
+	\end{varwidth}\hspace{1.5cm}
+\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 5cm]
+if condition1 :
+    instructions1
+elif condition2 :
+    instruction2
+elif condition3 :
+    instructions3
+else :
+    instructions4
+\end{lstlisting}
+\end{varwidth}
+\end{center}
+\begin{example}
+	Deux joueurs s'affrontent aux dés. Le joueur qui obtient la plus grande valeur a gagné. Le programme suivant récupère la valeur obtenue par chacun des joueurs puis annonce qui a gagné la partie (on utilise pour cela les fonctions «\texttt{int}» et «\texttt{input}» de Python qui seront présentées en détails lors de la semaine \ref{chap_algo2}).
+	\begin{lstlisting}[language=iPython]
+d1 = int(input("Entrez la valeur obtenue par le joueur 1."))
+d2 = int(input("Entrez la valeur obtenue par le joueur 2."))
+if d1 > d2 :
+    print("Le joueur 1 a gagne.")
+elif d2 > d1 :
+    print("Le joueur 2 a gagne.")
+else:
+    print("Match nul!")\end{lstlisting}
+\end{example}
+
+
+\subsection{Boucles}
+
+En algorithmique, les \bi{boucles} permettent de répéter une séquence d'instructions sans avoir à réécrire la séquence. On distingue deux formes de boucles:
+\begin{itemize}
+	\item les \bi{boucles bornées} «{\ttfamily\bf pour}», pour lesquelles la répétition de la séquence d'instruction correspond au parcourt de tous les éléments d'un ensemble fini par une variable;
+	\item les \bi{boucles non bornées} «{\ttfamily\bf tant que}», pour lesquelles la répétition de la séquence d'instruction est soumise à condition de répétition à chaque tour de la boucle.
+\end{itemize}
+Les boucles bornées sont appelées ainsi parce qu'elles s'arrêtent quand on arrive au bout de l'ensemble fini correspondant. Les boucles non bornées sont appelées ainsi parce qu'elles ne s'arrêtent que si la condition de répétition est fausse.
+
+\subsubsection{La boucle bornée «{\ttfamily\bf pour}»}
+
+Dans ce cours, on ne considère que les boucles «{\ttfamily\bf pour}» où la répétition de la séquence correspond au parcours par une variable d'un intervalle d'entiers (par exemple, $\{4,5,6,7,8,9\}$) et, le plus souvent, un intervalle d'entiers débutant en 0 (par exemple, $\{0,1,2,3,4,5,\}$). En pseudo-code, on pourra utiliser le mot-clé «{\ttfamily\bf pour}» en début de boucle et indiquer la fin de cette boucle par un «{\ttfamily\bf fin pour}».
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=Pseudo,linewidth=6cm]
+Pour i allant de 1 à n
+    Faire
+    |instructions
+Fin pour\end{lstlisting}\end{varwidth}\end{center}
+
+En Python, on utilise la commande «\texttt{for}», associée à une instruction de la forme «\texttt{i in range(n)}» qui signifie que \texttt{i} parcourt l'intervalle $\{0,1,2,...,n-1\}$, et suivie d'un deux points. Une indentation permet ensuite d'indiquer les instructions correspondant à la séquence d'instructions à répéter.
+\begin{center}\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth=5cm]
+for i in range(n) :
+    instructions
+\end{lstlisting}
+\end{varwidth}\end{center}
+
+\subsubsection{La boucle non bornée «{\ttfamily\bf tant que}»}
+
+Dans la boucle «{\ttfamily\bf tant que}», la boucle se répète tant qu'une condition de répétition est vraie. En pseudo-code, on peut indiquer le commencement d'une telle boucle par «{\ttfamily\bf tant que}» et la fin des instructions de la boucle par «{\ttfamily\bf fin tant que}».
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth=8cm]
+Tant que la condition est vraie
+    Faire
+    |instructions
+Fin tant que\end{lstlisting}\end{varwidth}\end{center}
+
+En Python, la boucle «{\ttfamily\bf tant que}» passe par la commande «\texttt{while}», associée à une condition, et suivie d'un deux points. Comme usuellement en Python, une indentation permet d'indiquer les instructions correspondant à la séquence d'instructions à répéter.
+\begin{center}\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth=5cm]
+while condition :
+    instructions
+\end{lstlisting}\end{varwidth}\end{center}
+
+Attention, si la condition est toujours vérifiée, la boucle ne s'arrêtera jamais. On dit que le programme tourne en \bi{boucle infinie}. Généralement, ce n'est pas souhaitable. Il faut donc s'assurer que la condition de répétition puisse passer de la valeur {\ttfamily\bf vrai} à la valeur {\ttfamily\bf faux} lors de la séquence d'instructions de la boucle.
+
+\begin{exercise}
+	Dans le programme Python qui suit, l'une des deux boucles tourne en boucle infinie. Laquelle?
+	\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 4cm]
+i = 0
+while i >= 0 :
+    i = i + 1
+    print(i)\end{lstlisting}
+\end{varwidth}\hspace{3cm}
+\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 4cm]
+i = 10
+while i >= 0 :
+    i = i - 1
+    print(i)
+\end{lstlisting}\end{varwidth}\end{center}
+Décrire pas-à-pas les opérations qui sont effectuées lors de l'exécution de chacune de ces boucles.
+\end{exercise}
+
+On remarquera que dans l'exercice précédent, la variable \texttt{i} est affectée à une valeur avant le début de la boucle. Ceci est un schéma classique en programmation qui s'appelle l'\bi{initialisation}. On dit, par exemple, que la variable \texttt{i} est initialisée à 0 avant la première boucle et initialisée à 10 avant la deuxième boucle.
+
+\chapter*{Exercices non à soumettre}
+
+\begin{exercise}
+	On considère les trois séquences d'instructions suivantes en pseudo-code.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 3cm,escapeinside={(*}{*)}]
+x = x+1
+b = x(*$^2$*)
+a = x-1
+c = a(*$^2$*)
+x = b-c
+\end{lstlisting}	
+	\end{varwidth}\hspace{2cm}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 3cm,escapeinside={(*}{*)}]
+x = x-1
+a = x(*$^2$*)
+x = x+2
+b = x(*$^2$*)
+x = a+b
+\end{lstlisting}	
+	\end{varwidth}\hspace{2cm}
+	\begin{varwidth}[t]{.5\textwidth}
+	\begin{lstlisting}[language=Pseudo,linewidth = 3cm,escapeinside={(*}{*)}]
+a = x-1
+b = a(*$^2$*)
+c = x+1
+d = c(*$^2$*)
+x = b+d
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\begin{enumerate}
+	\item On suppose que la variable \texttt{x} contient la valeur 2 avant l'exécution de la séquence. Dans chacun des cas, déterminez la valeur dans \texttt{x} après exécution de la séquence.
+	\item Identifiez la ou les séquences pour lesquelles, si \texttt{x} est initialisée à \texttt{a} avant l'exécution de la séquence, alors \texttt{x} contient $\texttt{(a-1)}^2+\texttt{(a+1)}^2$ après exécution de la séquence.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Aladin propose le code Python suivant pour échanger la valeur de deux variables \texttt{a} et \texttt{b}:
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 3cm]
+a = 42
+b = 23
+a = b
+b = a
+\end{lstlisting}	
+		\end{varwidth}
+\end{center}
+	\begin{enumerate}
+		\item Expliquer pourquoi le code fourni par Aladin ne remplit pas ses objectifs.
+		\item Proposer une autre solution qui échange effectivement les deux variables.
+	\end{enumerate}
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+	On considère le code Python suivant:
+	
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 13cm]
+x = int(input("Veuillez saisir un nombre entier."))
+if x<100:
+    print("Votre nombre est bien faible!")
+else:
+    print("Quel beau nombre!")
+print("Au revoir!")
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+\begin{enumerate}
+	\item Que fait le programme si l'utilisateur rentre la valeur 15 ?
+	\item Et la valeur 1515 ?
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	À la fête foraine, l'accès aux montagnes russes est réservé aux personnes mesurant au moins 1m20 (compris) et au plus 2m10 (compris). Faites un programme Python qui demande à un utilisateur de rentrer sa taille en mètres et l'informe, en fonction de sa réponse, s'il:
+	\begin{itemize}
+		\item peut monter dans l'attraction;
+		\item est trop petit;
+		\item est trop grand.
+	\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+	\textbf{Algorithme: Équation d'une droite passant par deux points donnés.} L'objectif ici est de développer un programme Python qui renvoie l'équation d'une droite passant par deux points $A\left(x_A;y_A\right)$ et $B\left(x_B;y_B\right)$ dont les coordonnées dans un repère sont données.
+	\begin{enumerate}
+		\item Que se passe-t-il si $A=B$?
+		\item Quelle est l'équation de la droite dans le cas où $x_A=x_B$ et $y_A\neq y_B$?
+		\item Donnez l'équation de la droite dans le cas où $x_A\neq x_B$.
+		\item Utilisez une instruction conditionnelle pour réaliser un programme Python qui affiche l'équation de la droite passant par $A$ et par $B$.
+	\end{enumerate}
+\end{exercise}
+
+
+\newpage
+
+\begin{exercise}
+	On considère le code Python suivant.
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 5cm]
+a = "A"
+for k in range(2):
+    a = a + "ha"
+a = a +"!"
+print(a)
+\end{lstlisting}
+		\end{varwidth}
+	\end{center}	
+	\begin{enumerate}
+		\item Quelle valeur est contenu dans la variable \texttt{a} après exécution du programme.
+		\item Comment modifier le code pour produire un fou rire.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Pour chacun des programmes suivants, dire quelle valeur prend la variable \texttt{d} après exécution du programme.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 5cm,escapeinside={(*}{*)}]
+a = 1
+b = 1
+c = 1
+d = 0
+for k in range(2):
+    a = a+b
+    b = b+a
+    c = c+b
+    d = d+c
+\end{lstlisting}	
+		\end{varwidth}\hspace{2cm}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 5cm,escapeinside={(*}{*)}]
+a = 1
+b = 1
+c = 1
+d = 0
+for k in range(2):
+    a = a+b
+    b = b+a
+    c = c+b
+d = d+c
+\end{lstlisting}	
+		\end{varwidth}\vspace{1cm}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 5cm,escapeinside={(*}{*)}]
+a = 1
+b = 1
+c = 1
+d = 0
+for k in range(2):
+    a = a+b
+    b = b+a
+c = c+b
+d = d+c
+\end{lstlisting}	
+		\end{varwidth}\hspace{2cm}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 5cm,escapeinside={(*}{*)}]
+a = 1
+b = 1
+c = 1
+d = 0
+for k in range(2):
+     a = a+b
+b = b+a
+c = c+b
+d = d+c
+\end{lstlisting}	
+		\end{varwidth}
+	\end{center}
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+On considère la séquence d'instructions en pseudo-code qui suit.
+\begin{center}
+\begin{varwidth}[t]{\textwidth}
+\begin{lstlisting}[language=Pseudo,linewidth = 5cm]
+x = 3
+y = 11
+k = 1
+Tant que x < y
+    Faire
+    | x = 3x + 2
+    | y = 2y + 1
+    | k =  k + 1
+Fin tant que
+Afficher k
+\end{lstlisting}\end{varwidth}\end{center}
+\begin{enumerate}
+	\item Quelle valeur est affichée lorsque l'on exécute cette séquence?
+	\item Implémentez cette séquence en Python et exécutez votre code afin de vérifier votre réponse.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Un étudiant fauché place 10€ sur son livret A en 2020, rémunéré $0,5\%$ d'intérêt par an. À partir de quelle année cet étudiant aura-t-il au moins 20€ sur son livret? Réalisez un code Python qui permette de répondre à la question.
+\end{exercise}
+
+\begin{exercise}~
+	\begin{enumerate}
+		\item En utilisant une boucle «{\ttfamily\bf pour}», rédigez un code Python qui vous permettra de remplir le tableau ci-dessus.
+		\item Même question avec une boucle «{\ttfamily\bf tant que}».
+	\end{enumerate}
+\begin{center}
+\begin{tabular}{|C{1.2cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|C{.7cm}|N}
+	\hline
+	$i$&$-5$&$-4$&$-3$&$-2$&$-1$&$0$&$1$&$2$&$3$&$4$&$5$&\\[15pt]\hline
+	$\dfrac{i^3-4}{2}$&&&&&&&&&&&&\\[15pt]\hline
+\end{tabular}
+\end{center}
+\end{exercise}
+
+\begin{exercise}
+	\textbf{Algorithme: Test de divisibilité.} On se propose ici de définir un algorithme pour tester si un nombre naturel $b$ est divisible par un nombre naturel non nul $a$.
+	\begin{enumerate}
+		\item Expliquez que $b$ est divisible par $a$ si et seulement si $b$ est un multiple de $a$.
+		\item Donnez les quatre premiers multiples positifs de $a$ dans l'ordre croissant.
+		\item Décrivez un algorithme qui utilise une boucle pour vérifier tous les multiples de $a$ dans l'ordre croissant, jusqu'à un certain point, pour savoir si $b$ est un multiple de $a$ . À partir de quand la boucle peut-elle s'arrêter pour conclure sur la divisibilité de $b$ par $a$.
+		\item Implémentez votre algorithme en Python et testez le pour voir s'il fonctionne correctement.
+		\item Proposez un second programme Python qui aboutit au même résultat, sans utiliser de boucle, en utilisant l'opérateur \texttt{\%}.
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	\textbf{Algorithme: Plus grand multiple de $a$ inférieur ou égal à $b$.}
+	\begin{enumerate}
+		\item En vous inspirant de l'algorithme dans l'exercice précédent, définissez un algorithme qui permet de trouver le plus grand multiple d'un nombre naturel $a$ inférieur ou égal à un nombre naturel $b$.
+		\item Généralisez votre algorithme au cas où $a$ et $b$ sont des nombres relatifs.
+		\item Implémentez votre algorithme en Python.
+		\item Proposez un second programme Python qui aboutit au même résultat, sans utiliser de boucle, en vous servant de l'opérateur \texttt{//}.
+	\end{enumerate}	
+\end{exercise}
+
+\begin{exercise}
+	\begin{enumerate}\textcolor{white}{text}
+		\item En utilisant le package random (taper \textit{import random}) et la commande random.randint(a,b) qui tire un nombre au hasard en a et b. Faites une boucle conditionnelle tirant au hasard un nombre entre 0 et 50 jusqu'à être le numéro 18. On affiche le numéro dans la boucle. (Pour les NSI, cette boucle est elle infini et pourquoi ?)
+		\item Faire une boucle qui tire des noms au hasard jusqu'à avoir un nombre pair.
+		\item Faire une boucle où le nombre augmente de 3 en 3 jusqu'à dépasser le numéro 1802.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\textcolor{white}{tt}
+	\begin{enumerate}
+		\item Faire une boucle qui affiche les noms de toute votre famille
+		\item Faire une boucle qui compte tous les nombre de 1 à 1000
+		\item Faire une boucle qui dit le nombre de lettres pour le nom de chaque personne de votre famille (utiliser la fonction len())
+	\end{enumerate}
+\end{exercise}

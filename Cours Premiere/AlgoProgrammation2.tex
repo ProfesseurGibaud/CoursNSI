@@ -1,0 +1,503 @@
+\chapter{Algorithmique et programmation 2}\label{chap_algo2}
+
+\setcounter{section}{2}
+
+\section{Les fonctions en Python}
+
+
+\begin{remark}
+	\begin{enumerate}\textcolor{white}{text}
+		\item Comment un informaticien/mathématicien fait bouillir de l'eau avec une casserole vide, un robinet et une plaque chauffante ? \\
+		Il remplit la casserole, il fait chauffer la casserole jusqu'à ébullition.
+		\item Comment un informaticien/mathématicien fait bouillir de l'eau avec une casserole vide, un robinet et une plaque chauffante ? \\
+		Il vide la casserole et ré-applique la réponse de la question 1. 
+	\end{enumerate}
+\end{remark}
+
+En informatique, on essaie d'être assez fainéant mais productif, c'est à dire lorsque l'on a fait quelque chose on essaie de le réutiliser. Pour ce faire on utilise des fonctions. \\
+Comme en mathématiques, \textit{une fonction c'est juste quelque chose en entrée et qui donne quelque chose en sortie.} En informatique parfois ce quelque chose c'est rien. 
+
+\subsection{Généralités}
+
+En Python, il est possible de définir des \bi{fonctions}. Les fonctions en programmation permettent d'utiliser de multiple fois une séquence d'instructions qui dépendent d'un certain nombre de \bi{paramètres} (on parle aussi d'\bi{arguments}). La notion de fonction en informatique diffère légèrement de la notion de fonction en mathématiques qui est présentée la semaine suivante. D'ailleurs, elle peut varier d'un langage de programmation à l'autre. On se limite ici uniquement au cas des fonctions en Python.
+
+En Python, la définition d'une fonction passe par la définition:
+\begin{itemize}
+	\item du nom de la fonction;
+	\item de sa liste de paramètres en entrée (qui peut être vide);
+	\item de la séquence d'instruction dans la fonction;
+	\item de la sortie de la fonction (qui est facultative en Python). 
+\end{itemize}
+Elle prend forme suivante:
+	\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 7cm]
+def nom_fonction(a,b,c):
+    instructions
+    return sortie
+\end{lstlisting}\end{varwidth}\end{center}
+Ici, la première ligne comporte:
+\begin{itemize}
+	\item la commande \texttt{def} qui indique qu'une fonction va être définie;
+	\item \texttt{nom\_fonction} qui désigne le nom de la fonction (choisie par l'utilisateur);
+	\item des variables \texttt{a}, \texttt{b} et \texttt{c} qui sont les paramètres de la fonction (dont le nom est choisi par l'utilisateur), ils sont placés entre parenthèses et séparés les uns des autres par des virgule (il peut y en avoir n'importe quel nombre entier, y compris 0, dans ce cas on écrit \texttt{nom\_fonction()});
+	\item un deux points.
+\end{itemize}
+Cette première ligne est suivie, après indentation, de la séquence  d'instructions de la fonction qui se termine généralement (mais pas nécessairement) par un \bi{renvoi} de la fonction indiqué par la commande \texttt{return}. Le renvoi permet de définir une valeur renvoyée en sortie. Le code d'une fonction peut contenir plusieurs renvois correspondant à différents cas (en utilisant des instructions conditionnelles, par exemple). Toutefois, l'exécution de la fonction n'effectue jamais qu'un seul envoi.
+
+\begin{example}
+	La fonction \texttt{f} prend un paramètre \texttt{x} et renvoie la valeur obtenue par l'instruction \texttt{2*x+3}. En mathématiques, elle correspond à une fonction affine de la forme $f:x\mapsto 2x+3$.
+	\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm]
+def f(x):
+    return 2*x+3
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+
+\begin{example}
+	La fonction \texttt{puissance} prend deux paramètres \texttt{a} et \texttt{n} et renvoie en sortie \texttt{a} à la puissance \texttt{n}.
+	\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 6cm]
+def puissance(a,n):
+    p = 1
+    for k in range(n):
+        p = p * a
+    return p
+\end{lstlisting}\end{varwidth}\end{center}
+On remarque que l'indentation de la boucle s'ajoute à l'indentation de la définition de la fonction.
+\end{example}
+
+\begin{example}
+	La fonction \texttt{mini} prend deux paramètres \texttt{a} et \texttt{b} et renvoie le plus petit des deux. Ici le renvoi dépend d'une instruction conditionnelle.
+	\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm]
+def mini(a,b):
+    if a<b:
+        return a
+    else:
+        return b
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+
+\begin{example}
+	La fonction \texttt{bonjour} affiche \texttt{Bonjour!} à l'écran. Elle ne prend aucun paramètre et ne fait aucun renvoi \footnote{attention à ne pas confondre affichage et renvoi!}.
+		\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 6cm]
+def bonjour():
+    print("Bonjour!")
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+
+\subsection{Fonctions prédéfinies}\label{fonctions_predefinies}
+
+Dans Python, un certain nombre de fonctions sont déjà prédéfinies. Elles peuvent donc être utilisées directement sans avoir à les redéfinir. Quelques unes de ces fonctions ont déjà été évoquées dans ce cours (\texttt{print},\texttt{input}). Le tableau suivant contient une liste de fonctions prédéfinies en Python qui pourront vous servir dans le cadre de ce cours. Cette liste n'est bien évidemment pas exhaustive et vous pourrez découvrir les autres fonctions prédéfinies en Python en consultant la documentation disponible via le lien suivant: \href{https://docs.python.org/3/}{https://docs.python.org/3/}.
+
+\begin{center}
+	\begin{tabular}{|C{3cm}|L{11cm}|N}
+		\hline
+		Fonction & \multicolumn{1}{c|}{Description} &\\[15pt]\hline
+		\texttt{print(x)} & Affiche la valeur de \texttt{x} dans la console.&\\[15pt]\hline
+		\texttt{print(txt,x)} & Affiche le texte de la chaîne de caractères \texttt{txt} suivi de la valeur de \texttt{x} dans la console.&\\[15pt]\hline
+		\texttt{input(txt)} & Affiche le texte de la chaîne de caractères \texttt{txt} dans la console. L'utilisateur doit alors taper une valeur dans la console qui sera renvoyée par la fonction \texttt{input} dès que l'utilisateur appuie sur la touche \textit{Entrée} du clavier. &\\[15pt]\hline
+		\texttt{int(x)} & Renvoie la valeur de \texttt{x} convertie en entier lorsque cela est possible.&\\[15pt]\hline
+		\texttt{float(x)} & Renvoie la valeur de \texttt{x} convertie en flottant lorsque cela est possible.&\\[15pt]\hline
+		\texttt{len(txt)} & Renvoie le nombre de caractères dans la chaîne de caractères \texttt{txt}.&\\[15pt]\hline
+		\texttt{abs(x)} & Renvoie la valeur absolue de \texttt{x}.&\\[15pt]\hline
+		\texttt{round(x,n)} & Renvoie la valeur arrondie de \texttt{x} à $10^{-\texttt{n}}$ près.&\\[15pt]\hline
+	\end{tabular}
+\end{center}
+
+\begin{example}
+	Dans le code Python suivant, on utilise les fonctions \texttt{float}, \texttt{input}, \texttt{print} et \texttt{round}.
+	\begin{lstlisting}[language=iPython]
+x = float(input("Veuillez rentrer une valeur pour x"))
+print("La valeur approchee de x a 0,01 pres vaut",round(x,2))
+\end{lstlisting}
+Remarquez l'encapsulation de la fonction \texttt{input} dans la fonction \texttt{float}. Ceci est nécessaire car la fonction \texttt{input} ne permet que de récupérer le texte taper par l'utilisateur (même si ce texte comporte des nombres). Ainsi, si l'on n'utilise pas la fonction \texttt{float} et que l'utilisateur rentre la valeur \texttt{123.3} avant de valider par la touche Entrée, c'est la chaîne de caractère \texttt{"123.3"} qui sera stockée dans la variable \texttt{x}. La fonction \texttt{float} permet alors de convertir la chaîne de caractère \texttt{"123.3"} en \texttt{123.3} qui est un nombre flottant.
+\end{example}
+
+\subsubsection{Bibliothèques}\label{bibliotheques}
+
+En plus des fonctions prédéfinies qui sont accessibles directement, Python propose également un certain nombres de \bi{bibliothèques} (aussi appelés \bi{modules}) qui contiennent de nombreuses fonctions déjà programmées (ainsi que d'autres objets prédéfinis). Pour utiliser les fonctions d'une bibliothèque, il faut d'abord \bi{importer} la bibliothèque. La manière la plus simple pour ce faire est d'utiliser la commande \texttt{import} suivi du nom de la bibliothèque.
+\begin{example}
+	L'instruction suivante permet d'importer la bibliothèque standard \texttt{math}.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+import math
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+Pour utiliser une fonction d'une bibliothèque (ou n'importe quel autre type d'objet d'une bibliothèque), il suffit alors d'utiliser la syntaxe \texttt{nom\_bibliotheque.nom\_fonction}.
+\begin{example}
+	Le code suivant permet d'importer la bibliothèque \texttt{math} dans Python pour utiliser la fonction \texttt{sqrt} qui permet de calculer une racine carrée\footnote{\texttt{sqrt} est une abréviation de \textit{square root} qui signifie \textit{racine carrée} en anglais.}. Ici, on affiche la valeur de $\sqrt{2}$.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm]
+import math
+print(math.sqrt(2))
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+Une autre façon d'importer les fonctions et objets d'une bibliothèque est d'utiliser une instruction suivant la syntaxe ci-dessous:
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 8cm]
+from nom_bibliotheque import *
+\end{lstlisting}\end{varwidth}\end{center}
+Cette instruction permet d'importer toutes les fonctions et objets d'une bibliothèque de manière à ce qu'ils puissent être utilisés sans rappeler le nom de la bibliothèque.
+\begin{example}
+	Ici, on importe \texttt{math} pour utiliser la valeur approchée \texttt{pi} de $\pi$ qui est enregistrée dans la bibliothèque \texttt{math}.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm]
+from math import *
+print(pi)
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+Il existe un certain nombre d'autres façons d'importer des bibliothèques en Python (en entier ou partiellement) qui ne seront pas détaillées ici. Vous pourrez les retrouver dans la documentation Python.
+
+En plus de la bibliothèque \texttt{math}, on utilise également dans ce cours la bibliothèque \texttt{random} (pour faire des simulations aléatoires) et la bibliothèque \texttt{mathplotlib.pyplot} (pour faire des représentations graphiques). Les fonctions des bibliothèques seront présentées au fur et à mesure de leur utilisation dans le cours ou les exercices.
+
+\subsection{Fonctions aléatoires}
+
+Le langage Python permet également la définition de \bi{fonctions aléatoires}. En informatique, une fonction aléatoire est une fonction dont la valeur renvoyée est le résultat d'un tirage aléatoire. Cette valeur n'est donc pas déterminée de manière unique par la valeur des paramètres en entrée de la fonction. La bibliothèque \texttt{random} en Python contient un certain nombre de fonctions aléatoires prédéfinies et notamment la fonction \texttt{randint} qui renvoie un entier compris entre deux valeurs fournies en paramètres de manière aléatoire et selon une loi de probabilité uniforme\footnote{Comme on le verra au cours de la semaine \ref{chap_probas1}, cela signifie que toutes les valeurs peuvent sortir avec la même probabilité}.
+
+\begin{example}
+	Dans le code suivant, on importe les fonctions de la bibliothèque \texttt{random} afin de tirer au hasard soit 0, soit 1.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 6cm]
+from random import *
+print(randint(0,1))
+\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+
+\subsubsection{Simulation}
+
+Une \bi{simulation} est un processus qui calque un phénomène réel dans le but d'en prédire l'issue. Le résultat d'une simulation peut ainsi informer sur le résultat possible du phénomène. On utilise généralement les simulations en informatique pour recréer un phénomène qui coûterait trop cher à réaliser physiquement (comme pour une simulation de crash-test d'avion) ou qui est tout simplement impossible à réaliser physiquement (comme pour une simulation de l'évolution climatique du globe terrestre).
+
+\begin{example}
+	On peut utiliser la fonction \texttt{randint} comme précédemment pour simuler le lancer d'une pièce qui peut tomber sur pile (que l'on fait correspondre au 0) ou face (que l'on fait correspondre au 1). Si un lancer de pièce est facile à réaliser physiquement, le lancer d'un million de pièces par exemple devient plus compliqué alors qu'en simulation cela ne met que quelques secondes sur un ordinateur moderne. Dans le code Python suivant, une simulation permet de comptabiliser combien de fois une pièce tombe sur face en un million de lancers. C'est la variable $p$ qui permet de stocker cette valeur.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 7cm]
+from random import *
+p=0
+for k in range(1000000):
+    p = p + randint(0,1)\end{lstlisting}\end{varwidth}\end{center}
+\end{example}
+
+\chapter*{Exercices non à soumettre}
+
+
+\begin{exercise}
+	Déterminez les renvois des fonctions \texttt{f} et \texttt{g} définies ci-dessous pour les appels \texttt{f(2)}, \texttt{f(0)}, \texttt{g(1)} et \texttt{g(3)}
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 4cm]
+def f(x):
+    y = x**2-3
+    return y
+\end{lstlisting}
+\end{varwidth}\hspace{2cm}
+	\begin{varwidth}[t]{.5\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 4cm]
+def g(x):
+    y = x**2-3
+    z = 3*x-y
+    y = z + x
+    return z
+\end{lstlisting}\end{varwidth}
+\end{center}
+\end{exercise}
+
+
+\begin{exercise}
+	On considère les trois fonctions Python suivantes.
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+def f1(x,y):
+    z = 0
+    while z<20:
+        z = x+y
+        x = 2*x
+        y = 3*y
+        z = y*z
+    return z
+\end{lstlisting}	
+		\end{varwidth}\hspace{1cm}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+def f2(x,y):
+    z = 0
+    while z<20:
+        z = x+y
+        x = 2*x
+        y = 3*y
+    z = y*z
+    return z
+\end{lstlisting}	
+		\end{varwidth}\hspace{1cm}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 4cm]
+def f3(x,y):
+    z = 0
+    while z<20:
+        z = x+y
+        x = 2*x
+    y = 3*y
+    z = y*z
+    return z
+\end{lstlisting}	
+		\end{varwidth}
+	\end{center}
+Détaillez les calculs de \texttt{f1(5,1)}, \texttt{f2(5,1)} et \texttt{f3(5,1)}. Vous listerez l'ensemble de toutes les affectations qui sont réalisées en indiquant si celles-ci ont lieu:\begin{itemize}
+	\item avant le début de la boucle;
+	\item dans la boucle et, dans ce cas, au combientième tour de la boucle;
+	\item après la sortie de la boucle.
+\end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}
+	Le tableau suivant donne la mention en fonction de la note $N$ obtenue à la première session du baccalauréat.
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			Condition & Mention\\\hline
+			$0\leq N<8$& AJOURNE(E)\\\hline
+			$8\leq N<10$&RATTRAPAGE\\\hline
+			$10\leq N<12$&SANS MENTION\\\hline
+			$12\leq N<14$&ASSEZ BIEN\\\hline
+			$14\leq N<16$&BIEN\\\hline
+			$16\leq N$&TRES BIEN\\\hline
+		\end{tabular}
+	\end{center}
+	Définissez une fonction Python qui prend une note en paramètre et renvoie la mention correspondante sous forme de chaîne de caractère.
+\end{exercise}
+
+
+\begin{exercise}
+	À quelle notion mathématique correspond la fonction Python définie ci-dessous?
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 9cm]
+from math import *
+
+def fonction_mystere(a,b,c,d):
+    return sqrt((a-c)**2+(b-d)**2)
+\end{lstlisting}\end{varwidth}
+	\end{center}
+\end{exercise}
+
+\begin{exercise}
+	On considère la fonction Python suivante qui prend comme paramètres six variables qui correspondent aux coordonnées des sommets d'un triangle $ABC$ dans un repère orthonormé et renvoie un couple de valeurs (les couples sont des objets qui existent en Python et sont notés à l'aide de parenthèses comme en mathématiques).
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 7cm]
+def G(xA,yA,xB,yB,xC,yC):
+    xG=(xA+xB+xC)/3
+    yG=(yA+yB+yC)/3
+    return (xG,yG)
+\end{lstlisting}\end{varwidth}\end{center}
+	\begin{enumerate}
+		\item On appelle cette fonction en rentrant les paramètres correspondant aux points $A(2;1)$, $B(-2;5)$ et $C(0;-3)$. Que renvoie-t-elle?
+		\item On considère maintenant que $A$, $B$ et $C$ sont trois points quelconques du plan. Montrez que le point $G$ correspondant au renvoi de la fonction \texttt{G} en Python est défini par l'équation vectorielle suivante:
+		$$3\overrightarrow{OG}=\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}$$
+		\item Montrez que cette équation vectorielle est équivalente à:
+		$$\overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}=\overrightarrow{0}$$
+		\item À quoi sert cette fonction Python?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On considère un escalier (en deux dimensions) formés de carré comme dans la représentation graphique ci-dessous.
+	\begin{center}
+		\begin{tikzpicture}[scale=0.7]
+		\draw[-,very thick,Hred] (0,0) rectangle (1,1);
+		\draw[-,very thick,Hred] (0,1) rectangle (1,2);
+		\draw[-,very thick,Hred] (0,2) rectangle (1,3);
+		\draw[-,very thick,Hred] (0,3) rectangle (1,4);
+
+		\draw[-,very thick,Hred] (1,0) rectangle (2,1);
+		\draw[-,very thick,Hred] (1,1) rectangle (2,2);
+		\draw[-,very thick,Hred] (1,2) rectangle (2,3);
+		
+		\draw[-,very thick,Hred] (2,0) rectangle (3,1);
+		\draw[-,very thick,Hred] (2,1) rectangle (3,2);
+		
+		\draw[-,very thick,Hred] (3,0) rectangle (4,1);
+		\end{tikzpicture}
+	\end{center}
+	On appelle $n$ le nombre de carrés situés à la base de l'escalier. Le but de l'exercice est de déterminer le nombre total $m$ de carrés qui composent l'escalier en fonction de $n$. Dans l'exemple, $n=4$ et $m=10$.
+	\begin{enumerate}
+		\item Si on part du sommet pour arriver à la base, chaque étage possède un carré supplémentaire par rapport au précédent. En vous appuyant sur cette idée, écrivez une fonction Python qui permet de calculer $m$ en fonction de $n$ en parcourant une boucle.
+		\item On complète le schéma précédent en rajoutant un escalier inversé de la même forme que le premier de la manière suivante:
+			\begin{center}
+			\begin{tikzpicture}[scale=0.7]
+			\draw[very thick,Hblue] (0,0) grid (5,4);
+			
+			\draw[-,very thick,Hred] (0,0) rectangle (1,1);
+			\draw[-,very thick,Hred] (0,1) rectangle (1,2);
+			\draw[-,very thick,Hred] (0,2) rectangle (1,3);
+			\draw[-,very thick,Hred] (0,3) rectangle (1,4);
+			
+			\draw[-,very thick,Hred] (1,0) rectangle (2,1);
+			\draw[-,very thick,Hred] (1,1) rectangle (2,2);
+			\draw[-,very thick,Hred] (1,2) rectangle (2,3);
+			
+			\draw[-,very thick,Hred] (2,0) rectangle (3,1);
+			\draw[-,very thick,Hred] (2,1) rectangle (3,2);
+			
+			\draw[-,very thick,Hred] (3,0) rectangle (4,1);
+			
+			\draw[-,dashed,very thick,Hblue] (1,4)--(1,3)--(2,3)--(2,2)--(3,2)--(3,1)--(4,1)--(4,0);
+			\end{tikzpicture}
+		\end{center}
+		Déduisez-en une expression algébrique de $m$ en fonction de $n$.
+		\item Quelle approche privilégieriez-vous entre les deux? Justifiez votre réponse.
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	\textbf{Algorithme: Première puissance de $a$ inférieure (ou supérieure) à $b$.} On cherche ici à définir un algorithme qui permette d'obtenir la première puissance entière positive d'un nombre réel positif $a$ inférieure ou égale à un autre nombre réel positif $b$. Autrement dit, quelle est la plus petite valeur de $n\inN^*$ telle que $a^n\leq b$.
+	\begin{enumerate}
+		\item Quelle valeur de $n$ convient si $a\leq b$?
+		\item On considère par la suite que $b<a$.
+		\begin{enumerate}
+			\item En considérant, $a=4$ et $b=\frac{1}{2}$, montrez qu'un tel $n$ n'est pas forcément défini.
+			\item Discutez en fonction de la position relative de $a$ par rapport à $1$ de l'existence d'un tel $n$.
+			\item On suppose de plus que $a<1$. Complétez le programme Python suivant qui permet de déterminer la valeur souhaitée dans le cas où $a=0,9$ et $b=0,02$.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 4cm]
+a = 0.9
+b = 0.02
+
+n = 1
+p = a
+while p > b:
+    n = ...
+    p = ...
+\end{lstlisting}\end{varwidth}\end{center}
+		\end{enumerate}
+	\item En utilisant les différents éléments que vous avez trouvés, écrivez une fonction Python qui permettent de répondre à l'énoncé du problème.
+	\item Écrivez une fonction pour le cas où l'on recherche la première puissance de $a$ supérieure à $b$.
+	\end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}
+	\textbf{Algorithme : Test de primalité.} Le but de cet exercice est de déterminer si un entier $p>1$ est premier ou non.
+	\begin{enumerate}
+		\item Rappelez la définition d'un nombre premier.
+		\item Que vaut \texttt{(p\%k==0)} lorsque \texttt{k} est un diviseur de \texttt{p}? Et sinon?
+		\item Expliquez pourquoi le code suivant permet bien de déterminer si un nombre est premier.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 7cm]
+def premier1(p):
+    for k in range(2,p):
+        if (p%k == 0):
+            return False
+    return True\end{lstlisting}\end{varwidth}\end{center}
+		\item Montrez que l'on peut arrêter la boucle après avoir testé tous les diviseurs potentiels de $p$ inférieurs ou égaux à $\sqrt{p}$.
+		\item Complétez le code suivant pour intégrer cette information. On pourra utiliser la fonction \texttt{sqrt} du module \texttt{math} et faisant attention au fait que \texttt{range} doit prendre en entrée des paramètres de type \texttt{int}.
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 7cm]
+def premier2(p):
+	n = ...
+    for k in range(2,n):
+        if (p%k == 0):
+            return False
+    return True\end{lstlisting}\end{varwidth}\end{center}
+	\item Testez chacune des fonctions pour déterminer si $999999937$ est premier. Vous devriez trouver que c'est un nombre premier dans les deux cas: c'est le plus grand nombre premier à 9 chiffres.
+	\item Les deux fonctions ne mettent pas le même temps à répondre. Estimez le nombre de tours parcourus dans la boucle dans chacun des cas.
+	\item Testez maintenant les fonctions pour déterminer si $999999938$ est premier. Cette fois-ci les fonctions ont mis à peu près le même temps. Pourquoi?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\begin{enumerate}
+		\item Complétez le code suivant de la fonction \texttt{lancer} pour qu'elle simule le lancer d'un dé équilibré à six faces.
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 8cm]
+from random import *
+
+def lancer():
+    return randint(...,...)
+\end{lstlisting}\end{varwidth}\end{center}
+		\item On souhaite réaliser une simulation du lancer de 1000 dés. Complétez le code suivant et exécutez le à la suite du code précédent afin de pouvoir remplir le tableau des effectifs correspondant à la série statistique de la simulation.
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 6cm]
+n = 1000
+n1 = 0
+n2 = 0
+n3 = 0
+n4 = 0
+n5 = 0
+n6 = 0
+
+for k in range(n):
+    x = lancer()
+    if x == 1:
+        n1 = n1 + 1
+    elif x == 2:
+        n2 = n2 + 1
+    ...
+    else:
+        n6 = n6 + 1
+\end{lstlisting}\end{varwidth}\end{center}
+		\begin{center}
+			\begin{tabular}{|c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|}
+				\hline
+				Face & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\\hline
+				Effectif & &  &  &  &  &  \\\hline
+			\end{tabular}
+		\end{center}
+		\item Écrivez une fonction \texttt{moyenne} qui calcule la moyenne de la valeur obtenue lors d'un lancer à partir des valeurs obtenues lors de la simulation.
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	Dans cet exercice, on réalise la \bi{simulation du saut de puce}. C'est un problème classique en mathématiques qui appartient à une classe de problèmes très importants connus sous le nom de \bi{marches aléatoires}. Les marches aléatoires ont des applications multiples dans de nombreux domaines allant de l'informatique à l'économie en passant par la biologie. Elles sont beaucoup utilisées, par exemple, pour faire se déplacer des personnages dans des jeux vidéos. Les marches aléatoires peuvent être définies de manière très complexe mais on ne considère ici que la version la plus simple qu'est le saut de puce. On imagine qu'une puce se déplace en faisant des sauts le long d'un axe gradué dans un sens ou dans l'autre. On appelle $x$ la position de la puce sur l'axe gradué. La puce saute toutes les secondes exactement et le saut de la puce mesure toujours exactement la même longueur d'unité 1. Si l'on suppose que la puce commence à la position $x=0$ de l'axe gradué, après 1 seconde, elle sera soit à $x=-1$, soit à $x=1$. Enfin, le sens dans lequel la puce saute à chaque fois est parfaitement aléatoire: la puce a autant de chance de sauter vers la droite que vers la gauche.
+	\begin{enumerate}
+		\item Complétez le code Python suivant où l'on définit une fonction \texttt{saut} qui prend en paramètre correspondant à la position de la puce avant un saut et renvoie la position de la puce après le saut.
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 6cm]
+from random import *
+
+def saut(x):
+    a = randint(0,1)
+    if a == 1:
+        return ...
+    else:
+        return ...\end{lstlisting}\end{varwidth}\end{center}
+		\item On suppose que la puce commence toujours à la position $x=0$. Réalisez une fonction \texttt{deplacement} qui simule le déplacement de la puce pendant $n$ secondes et renvoie sa position finale (c'est-à-dire après $n$ sauts). Vous pourrez utiliser la fonction \texttt{saut} déjà définie.
+		\item Montrez qu'après 4 sauts, la position $x$ de la puce appartient nécessairement à $\{-4;-2;0;2;4\}$.
+		\item Exécutez la commande \texttt{deplacement(4)} vingt fois de suite et relevez les effectifs correspondant à l'occurrence de chacune des positions finales possibles dans le tableau suivant.
+		\begin{center}
+			\begin{tabular}{|c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|}
+				\hline
+				$x$ & $-4$ & $-2$ & $0$ & $2$ & $4$ \\\hline
+				Effectif &  &  &  &  &  \\\hline
+			\end{tabular}
+		\end{center}
+		\item Quelle est la valeur moyenne de la position finale donnée par cette série statistique?
+		\item On voudrait réaliser une série statistique similaire mais, cette fois-ci, avec un effectif total beaucoup plus important: $1,000,000$ par exemple. Faire un programme Python qui génère une telle série statistique et déterminez les fréquences obtenues dans ce cas.
+		\item Quelle est la valeur moyenne de cette nouvelle série statistique?
+	\end{enumerate}
+\end{exercise}
+

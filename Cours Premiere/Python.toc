@@ -1,0 +1,36 @@
+\babel@toc {french}{}
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Algorithmique et programmation 1}{1}{chapter.1}
+\contentsline {section}{\numberline {I.}Introduction}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.}D\IeC {\'e}finition}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {2.}Le code}{1}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {3.}Objectifs du chapitre}{2}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {4.}Ex\IeC {\'e}cuter un code Python en Console}{2}{subsection.1.1.4}
+\contentsline {section}{\numberline {II.}Variables et instructions \IeC {\'e}l\IeC {\'e}mentaires}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.}Types de variables}{3}{subsection.1.2.1}
+\contentsline {subsubsection}{Type bool\IeC {\'e}en}{3}{subsection.1.2.1}
+\contentsline {subsubsection}{Type entier}{3}{subsection.1.2.1}
+\contentsline {subsubsection}{Type flottant}{4}{subsection.1.2.1}
+\contentsline {subsubsection}{Type cha\IeC {\^\i }ne de caract\IeC {\`e}res}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {2.}Affectation}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {3.}Op\IeC {\'e}rations \IeC {\'e}l\IeC {\'e}mentaires}{5}{subsection.1.2.3}
+\contentsline {subsubsection}{Op\IeC {\'e}rations sur les flottants}{5}{lstnumber.-6.4}
+\contentsline {subsubsection}{Op\IeC {\'e}rations sur les entiers}{6}{lstnumber.-6.4}
+\contentsline {subsubsection}{Op\IeC {\'e}rations sur les bool\IeC {\'e}ens}{7}{lstnumber.-7.6}
+\contentsline {subsubsection}{Op\IeC {\'e}rations sur les cha\IeC {\^\i }nes de caract\IeC {\`e}re}{7}{lstnumber.-8.3}
+\contentsline {subsection}{\numberline {4.}Instructions conditionnelles}{8}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {5.}Boucles}{9}{subsection.1.2.5}
+\contentsline {subsubsection}{La boucle born\IeC {\'e}e \IeC {\guillemotleft }{\ttfamilyFB \bf pour}\IeC {\guillemotright }}{10}{subsection.1.2.5}
+\contentsline {subsubsection}{La boucle non born\IeC {\'e}e \IeC {\guillemotleft }{\ttfamilyFB \bf tant que}\IeC {\guillemotright }}{10}{lstnumber.-16.2}
+\contentsline {chapter}{\numberline {2}Algorithmique et programmation 2}{17}{chapter.2}
+\contentsline {section}{\numberline {III.}Les fonctions en Python}{17}{section.2.3}
+\contentsline {subsection}{\numberline {1.}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.}Fonctions pr\IeC {\'e}d\IeC {\'e}finies}{19}{subsection.2.3.2}
+\contentsline {subsubsection}{Biblioth\IeC {\`e}ques}{20}{lstnumber.-37.2}
+\contentsline {subsection}{\numberline {3.}Fonctions al\IeC {\'e}atoires}{21}{subsection.2.3.3}
+\contentsline {subsubsection}{Simulation}{21}{lstnumber.-42.2}
+\contentsline {chapter}{\numberline {3}Une Introduction \IeC {\`a} la Programmation Orient\IeC {\'e}e Objet : Les Classes et les Objets}{30}{chapter.3}
+\contentsline {section}{\numberline {I.}Concept : Programmation Orient\IeC {\'e}e Objet}{30}{section.3.1}
+\contentsline {section}{\numberline {II.}Cr\IeC {\'e}ation d'une Classe}{30}{section.3.2}
+\contentsline {section}{\numberline {III.}Attributs}{30}{section.3.3}
+\contentsline {section}{\numberline {IV.}Les M\IeC {\'e}thodes}{32}{section.3.4}

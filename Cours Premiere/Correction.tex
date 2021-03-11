@@ -1,0 +1,763 @@
+
+
+
+
+\titleCorrections{20}
+
+\chapter{}
+
+\begin{correction}
+	Le Console Python affiche d'abord \texttt{1} puis \texttt{2}.
+\end{correction}
+
+\begin{correction}
+	La Console Python affiche la valeur \texttt{False}.
+\end{correction}
+
+\begin{correction}~
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d}&\texttt{e}&\texttt{f}\\\hline
+			Valeur &\texttt{2}&\texttt{3}&\texttt{8}&\texttt{1.6}&\texttt{1}&\texttt{True}\\\hline
+		\end{tabular}
+	\end{center}
+\end{correction}
+
+\begin{correction}~
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}\\\hline
+			Valeur &\texttt{True}&\texttt{False}&\texttt{False}\\\hline
+		\end{tabular}
+	\end{center}
+\end{correction}
+
+\begin{correction}~
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}\\\hline
+			Valeur &\texttt{"math"}&\texttt{"mathematiques"}&\texttt{"haha"}\\\hline
+		\end{tabular}
+	\end{center}
+\end{correction}
+
+\begin{correction}
+	C'est la boucle de gauche qui tourne en boucle infinie. En effet, dans ce programme la variable \texttt{i} est initialisée à \texttt{0}. Comme la condition \texttt{i >= 0} est vérifiée, on rentre dans la boucle et \texttt{i} est augmentée de \texttt{1} et on affiche la valeur \texttt{1} dans la Console Python. Comme on ne fait qu'augmenter sa valeur à chaque tour de boucle, \texttt{i} sera toujours positif donc la condition sera toujours vérifiée. Le programme affiche donc à l'écran tous les entiers strictement positifs, sans jamais s'arrêter.
+	
+	Pour la deuxième boucle, \texttt{i} est initialisée à \texttt{10}. La condition est toujours la boucle mais, cette fois-ci, on diminue la valeur de \texttt{i} de \texttt{1} jusqu'à obtenir \texttt{-1}. À ce moment, la condition ne sera plus remplie et le programme s'arrêtera. Le programme affiche donc successivement: \texttt{9}; \texttt{8}; \texttt{7}; \texttt{6}; \texttt{5}; \texttt{4}; \texttt{3}; \texttt{2}; \texttt{1}; \texttt{0}; et \texttt{-1}. 
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item \begin{enumerate}
+			\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{x}&\texttt{a}&\texttt{b}&\texttt{c} \\\hline
+			Étape 1 &\texttt{3}&&&\\\hline
+			Étape 2 &\texttt{3}&&\texttt{9}&\\\hline
+			Étape 3 &\texttt{3}&\texttt{2}&\texttt{9}&\\\hline
+			Étape 4 &\texttt{3}&\texttt{2}&\texttt{9}&\texttt{4}\\\hline
+			Étape 5 &\texttt{5}&\texttt{2}&\texttt{9}&\texttt{4}\\\hline
+		\end{tabular}\end{center}
+	\item ~\begin{center}
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			Variable &\texttt{x}&\texttt{a}&\texttt{b} \\\hline
+			Étape 1 &\texttt{1}&&\\\hline
+			Étape 2 &\texttt{1}&\texttt{1}&\\\hline
+			Étape 3 &\texttt{3}&\texttt{1}&\\\hline
+			Étape 4 &\texttt{3}&\texttt{1}&\texttt{9}\\\hline
+			Étape 5 &\texttt{10}&\texttt{1}&\texttt{9}\\\hline
+		\end{tabular}\end{center}
+		\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{x}&\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+			Étape 1 &\texttt{2}&\texttt{1}&&&\\\hline
+			Étape 2 &\texttt{2}&\texttt{1}&\texttt{1}&&\\\hline
+			Étape 3 &\texttt{2}&\texttt{1}&\texttt{1}&\texttt{3}&\\\hline
+			Étape 4 &\texttt{2}&\texttt{1}&\texttt{1}&\texttt{3}&\texttt{9}\\\hline
+			Étape 5 &\texttt{10}&\texttt{1}&\texttt{1}&\texttt{3}&\texttt{9}\\\hline
+		\end{tabular}\end{center}
+	\end{enumerate}
+	\item \begin{enumerate}
+		\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Variable &\texttt{x}&\texttt{a}&\texttt{b}&\texttt{c} \\\hline
+				Étape 1 &\texttt{a+1}&&&\\\hline
+				Étape 2 &\texttt{a+1}&&$\texttt{(a+1)}^2$&\\\hline
+				Étape 3 &\texttt{a+1}&\texttt{a}&$\texttt{(a+1)}^2$&\\\hline
+				Étape 4 &\texttt{a+1}&\texttt{a}&$\texttt{(a+1)}^2$&$\texttt{a}^2$\\\hline
+				Étape 5 &$\texttt{(a+1)}^2\texttt{-a}^2$&\texttt{a}&$\texttt{(a+1)}^2$&$\texttt{a}^2$\\\hline
+			\end{tabular}\end{center}
+		\item~\begin{center}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				Variable &\texttt{x}&\texttt{a}&\texttt{b} \\\hline
+				Étape 1 &\texttt{a-1}&&\\\hline
+				Étape 2 &\texttt{a-1}&$\texttt{(a-1)}^2$&\\\hline
+				Étape 3 &\texttt{a+1}&$\texttt{(a-1)}^2$&\\\hline
+				Étape 4 &\texttt{a+1}&$\texttt{(a-1)}^2$&$\texttt{(a+1)}^2$\\\hline
+				Étape 5 &$\texttt{(a-1)}^2+\texttt{(a+1)}^2$&$\texttt{(a-1)}^2$&$\texttt{(a+1)}^2$\\\hline
+		\end{tabular}\end{center}
+	
+	
+		Cette séquence correspond au résultat demandé.
+		\item~\begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				Variable &\texttt{x}&\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+				Étape 1 &\texttt{a}&\texttt{a-1}&&&\\\hline
+				Étape 2 &\texttt{a}&\texttt{a-1}&$\texttt{(a-1)}^2$&&\\\hline
+				Étape 3 &\texttt{a}&\texttt{a-1}&$\texttt{(a-1)}^2$&\texttt{a+1}&\\\hline
+				Étape 4 &\texttt{a}&\texttt{a-1}&$\texttt{(a-1)}^2$&\texttt{a+1}&$\texttt{(a+1)}^2$\\\hline
+				Étape 5 &$\texttt{(a-1)}^2+\texttt{(a+1)}^2$&\texttt{a-1}&$\texttt{(a-1)}^2$&\texttt{a+1}&$\texttt{(a+1)}^2$\\\hline
+			\end{tabular}\end{center}
+		
+		Cette séquence correspond également au résultat demandé.
+	\end{enumerate}
+	\end{enumerate}
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Dans ce code, \texttt{a} prend bien la valeur de \texttt{b} qui vaut \texttt{23} mais quand on l'on assigne la valeur \texttt{a} à \texttt{b}, \texttt{a} prend la valeur \texttt{23}: les deux variables valent la même chose et la valeur \texttt{42} qui était stockée dans \texttt{a} initialement a été perdue.
+		\item Pour résoudre le problème, on peut par exemple introduire une nouvelle variable \texttt{c} pour stocker temporairement la valeur \texttt{42}.
+		\begin{center}
+			\begin{varwidth}[t]{\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 3cm]
+a = 42
+b = 23
+c = a
+a = b
+b = c
+\end{lstlisting}
+			\end{varwidth}
+		\end{center}
+	\end{enumerate}
+\end{correction}
+ 
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Si l'utilisateur rentre la valeur 15, la variable \texttt{x} prendra cette valeur. Comme  $15<100$, la condition de l'instruction conditionnelle sera remplie et la console Python affichera \texttt{Votre nombre est bien faible!} avant de sortir de l'instruction conditionnelle et d'afficher \texttt{Au revoir!}.
+		\item Dans ce cas, la condition de l'instruction conditionnelle ne sera pas remplie et la console Python affichera donc \texttt{Quel beau nombre!} avant de sortir de l'instruction conditionnelle et d'afficher \texttt{Au revoir!}.
+	\end{enumerate}
+\end{correction}
+
+\begin{correction}~
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 15cm]
+x = int(input("Veuillez saisir votre taille en metres."))
+if x>2.1:
+    print("Vous etes malheureusement trop grand pour cette attraction!")
+elif x<1.2:
+    print("Vous etes encore trop petit pour cette attraction!")
+else:
+    print("Amusez-vous bien!")
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Si $A=B$, alors on ne peut pas définir de droite.
+		\item Dans ce cas, on a une droite de pente verticale d'équation $x=x_A$.
+		\item Dans ce cas, l'équation de la droite est donnée par: $$y = mx+p~~\textnormal{ où }~~m=\dfrac{y_B-y_A}{x_B-x_A}~\textnormal{ et }~p=\dfrac{y_A(x_B-x_A)-x_A(y_B-y_A)}{x_B-x_A}~.$$
+		\item 
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 15cm]
+if xA == xB and yA == yB:
+    print("Il faut deux points distincts pour definir une droite.")
+elif xA == xB:
+    print("La droite admet pour equation x =,"xA)
+else:
+    m = (yB-yA)/(xB-xA)
+    p = (y_A(x_B-x_A)-x_A(y_B-y_A))/(x_B-x_A)
+    print("La droite admet pour equation y =",m,"* x +",p)
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+	\end{enumerate}
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item À la fin du programme, la variable \texttt{a} contient la chaîne de caractère \texttt{"Ahaha!"}
+		\item Il suffit d'augmenter la valeur dans le \texttt{range}. Si on remplace \texttt{range(2)} par \texttt{range(6)}, on aura ainsi \texttt{"Ahahahahahaha!"} contenu dans \texttt{a}.
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{enumerate}
+			\item ~
+\begin{center}
+			\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+			Avant la boucle     &\texttt{1}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 0} &\texttt{2}&\texttt{3}&\texttt{4}&\texttt{4}\\\hline
+			Fin tour \texttt{k = 1} &\texttt{5}&\texttt{8}&\texttt{12}&\texttt{16}\\\hline
+			Après la boucle     &\texttt{5}&\texttt{8}&\texttt{12}&\texttt{16}\\\hline
+		\end{tabular}
+\end{center}
+	\item ~
+		\begin{center}
+				\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+			Avant la boucle     &\texttt{1}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 0} &\texttt{2}&\texttt{3}&\texttt{4}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 1} &\texttt{5}&\texttt{8}&\texttt{12}&\texttt{0}\\\hline
+			Après la boucle     &\texttt{5}&\texttt{8}&\texttt{12}&\texttt{12}\\\hline
+		\end{tabular}
+		\end{center}
+		\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+			Avant la boucle     &\texttt{1}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 0} &\texttt{2}&\texttt{3}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 1} &\texttt{5}&\texttt{8}&\texttt{1}&\texttt{0}\\\hline
+			Après la boucle     &\texttt{5}&\texttt{8}&\texttt{9}&\texttt{9}\\\hline
+		\end{tabular}\end{center}
+		\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Variable &\texttt{a}&\texttt{b}&\texttt{c}&\texttt{d} \\\hline
+			Avant la boucle     &\texttt{1}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 0} &\texttt{2}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Fin tour \texttt{k = 1} &\texttt{3}&\texttt{1}&\texttt{1}&\texttt{0}\\\hline
+			Après la boucle     &\texttt{3}&\texttt{4}&\texttt{5}&\texttt{5}\\\hline
+		\end{tabular}\end{center}
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{enumerate}
+			\item ~\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Variable &\texttt{x}&\texttt{y}&\texttt{k} \\\hline
+			Avant la boucle     &\texttt{3}&\texttt{11}&\texttt{1}\\\hline
+			Fin premier tour    &\texttt{11}&\texttt{23}&\texttt{2}\\\hline
+			Fin deuxième tour   &\texttt{35}&\texttt{47}&\texttt{3}\\\hline
+			Fin troisième tour &\texttt{107}&\texttt{95}&\texttt{4}\\\hline
+		\end{tabular}			\end{center}
+		
+		Le programme affiche la valeur \texttt{4}.
+			\item~
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 5cm]
+x = 3
+y = 11
+k = 1
+while x < y:
+    x = 3*x + 2
+    y = 2*y +1
+    k = k + 1
+
+print(k)
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 5cm]
+x = 10
+k = 2020
+while x < 20:
+    x = x * 1.005
+    k = k + 1
+
+print(k)
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+
+Le pauvre étudiant devra attendre l'année 2159!
+\end{correction}
+
+
+\begin{correction}~
+\begin{enumerate}
+	\item ~
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 7cm]
+for i in range(-5,6):
+    print((i**3-4)/2)
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+	\item ~
+	\begin{center}
+		\begin{varwidth}[t]{\textwidth}
+	\begin{lstlisting}[language=iPython,linewidth = 6cm]
+i = -5
+while i < 6:
+    print((i**3-4)/2)
+    i = i + 1
+\end{lstlisting}
+		\end{varwidth}
+\end{center}
+\end{enumerate}
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item $b$ est divisible par $a$ $\iff$ $\frac{b}{a}=k$ est un entier $\iff$ $b=ka$ pour un entier $k$ $\iff$ $b$ est un multiple de $a$.
+		\item $0$, $a$, $2a$ et $3a$.
+		\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 12cm,escapeinside={(*}{*)}]
+m = 0
+Tant que m<b
+    Faire
+    |m = m + a
+Fin tant que
+Si m == b
+    Alors faire
+    |Afficher "b est un multiple de a."
+Sinon
+	Faire
+	|Afficher "b n'est pas un multiple de a."
+Fin si
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}La boucle s'arrête à partir du moment où le multiple de $a$ considéré est supérieur à $b$.
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm,escapeinside={(*}{*)}]
+m = 0
+while m<b:
+    m = m + a
+if m == b:
+    print("b est un multiple de a.")
+else:
+	print("b n'est pas un multiple de a.")
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 11cm,escapeinside={(*}{*)}]
+if b%a == 0:
+    print("b est un multiple de a.")
+else:
+    print("b n'est pas un multiple de a.")
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\end{enumerate}
+\end{correction}
+
+
+
+\begin{correction}
+	\begin{enumerate}
+		\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 5cm,escapeinside={(*}{*)}]
+m = 0
+Tant que m+a(*$\leq$*)b
+    Faire
+    |m = m + a
+Fin tant que
+Afficher m
+\end{lstlisting}
+	\end{varwidth}
+\end{center}
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 7cm,escapeinside={(*}{*)}]
+Si 0(*$\leq$*)b
+    Alors faire
+    |m = 0
+    |Tant que m+|a|(*$\leq$*)b
+        Faire
+        |m = m + |a|
+    Fin tant que
+Sinon
+    Faire
+    |m = 0
+    |Tant que m-|a|(*$\geq$*)b
+        Faire
+        |m = m - |a|
+    Fin tant que
+Afficher m
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\item~ 
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 8cm,escapeinside={(*}{*)}]
+m = 0
+if 0 <= b:
+    while m + abs(a) <= b:
+        m = m + abs(a)
+else:
+    while m - abs(a) >= b:
+        m = m - abs(a)
+print(m)
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 5cm,escapeinside={(*}{*)}]
+k = b // abs(a)
+m = a*k
+print(m)
+\end{lstlisting}	
+	\end{varwidth}
+\end{center}
+\end{enumerate}
+\end{correction}
+
+
+\chapter{}
+
+
+
+\begin{correction}
+	On trouve \texttt{f(2)=1}, \texttt{f(0)=-3}, \texttt{g(1)=5} et \texttt{g(3)=3}.
+\end{correction}
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Calcul de \texttt{f1(5,1)}:
+		\begin{itemize}
+			\item Avant la boucle: \texttt{x$\leftarrow$5}; \texttt{y$\leftarrow$1}; \texttt{z$\leftarrow$0}
+			\item Premier tour de la boucle: \texttt{z$\leftarrow$6}; \texttt{x$\leftarrow$10}; \texttt{y$\leftarrow$3}; \texttt{z$\leftarrow$18}
+			\item Deuxième tour de la boucle: \texttt{z$\leftarrow$13}; \texttt{x$\leftarrow$20}; \texttt{y$\leftarrow$9}; \texttt{z$\leftarrow$117}
+			\item Après la boucle: pas d'affectation
+			\item Renvoi: \texttt{117}
+		\end{itemize}
+		\item Calcul de \texttt{f2(5,1)}:
+		\begin{itemize}
+			\item Avant la boucle: \texttt{x$\leftarrow$5}; \texttt{y$\leftarrow$1}; \texttt{z$\leftarrow$0}
+			\item Premier tour de la boucle: \texttt{z$\leftarrow$6}; \texttt{x$\leftarrow$10}; \texttt{y$\leftarrow$3};
+			\item Deuxième tour de la boucle: \texttt{z$\leftarrow$13}; \texttt{x$\leftarrow$20}; \texttt{y$\leftarrow$9}
+			\item Troisième tour de la boucle: \texttt{z$\leftarrow$29}; \texttt{x$\leftarrow$40}; \texttt{y$\leftarrow$27}
+			\item Après la boucle: \texttt{z$\leftarrow$783}
+			\item Renvoi: \texttt{783}
+		\end{itemize}
+		\item Calcul de \texttt{f3(5,1)}:
+		\begin{itemize}
+			\item Avant la boucle: \texttt{x$\leftarrow$5}; \texttt{y$\leftarrow$1}; \texttt{z$\leftarrow$0}
+			\item Premier tour de la boucle: \texttt{z$\leftarrow$6}; \texttt{x$\leftarrow$10}
+			\item Deuxième tour de la boucle: \texttt{z$\leftarrow$11}; \texttt{x$\leftarrow$20}
+			\item Troisième tour de la boucle: \texttt{z$\leftarrow$21}; \texttt{x$\leftarrow$40}
+			\item Après la boucle: \texttt{y$\leftarrow$3}; \texttt{z$\leftarrow$63}
+			\item Renvoi: \texttt{63}
+		\end{itemize}
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{center}
+		\begin{varwidth}[t]{.5\textwidth}
+			\begin{lstlisting}[language=iPython,linewidth = 8cm]
+def mention(N):
+    if N<8:
+        return "AJOURNE(E)"
+    elif N<10:
+        return "RATTRAPAGE"
+    elif N<12:
+        return "SANS MENTION"
+    elif N<14:
+        return "ASSEZ BIEN"
+    elif N<16:
+        return "BIEN"
+    else:
+        return "TRES BIEN"
+\end{lstlisting}
+		\end{varwidth}\end{center}
+\end{correction}
+
+
+\begin{correction}
+	Le renvoi de cette fonction correspond à la distance entre deux points $M(a;b)$ et $N(c;d)$ dont les coordonnées sont données dans un repère orthonormé.
+\end{correction}
+
+
+
+\begin{correction}~
+	\begin{enumerate}
+		\item La fonction renvoie le couple \texttt{(0,1)}.
+		\item On considère le point $G(x_G;y_G)$. Alors,  $$3\overrightarrow{OG}=\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}$$ $$\iff\overrightarrow{OG}=\frac{1}{3}\overrightarrow{OA}+\frac{1}{3}\overrightarrow{OB}+\frac{1}{3}\overrightarrow{OC}$$ $$\iff x_G = \frac{x_A+x_B+x_C}{3}~~~\textnormal{ et }~~~
+		y_G = \frac{y_A+y_B+y_C}{3}$$
+		\item On a $$\begin{matrix}
+		\overrightarrow{OG}&=&\overrightarrow{OA}+\overrightarrow{AG}\\
+		&=&\overrightarrow{OA}-\overrightarrow{GA}\\
+		&=&\overrightarrow{OB}+\overrightarrow{BG}\\
+		&=&\overrightarrow{OB}-\overrightarrow{GB}\\
+		&=&\overrightarrow{OC}+\overrightarrow{CG}\\
+		&=&\overrightarrow{OC}-\overrightarrow{GC}\\
+		\end{matrix}$$
+		D'où, $$3\overrightarrow{OG}=\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}-\left(
+		\overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC}\right)$$
+		Ainsi $$\overrightarrow{GA}+\overrightarrow{GB}+\overrightarrow{GC} = \overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC}-3\overrightarrow{OG}=\overrightarrow{0}$$
+		\item Cette fonction calcule les coordonnées du centre de gravité du triangle en fonction des coordonnées des sommets du triangle.
+	\end{enumerate}
+\end{correction}
+
+
+
+\begin{correction}~
+	\begin{enumerate}
+		\item ~
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 9cm]
+def escalier(n):
+    m = 0
+    for k in range(1,n+1):
+        m = m + k
+    return m
+\end{lstlisting}\end{varwidth}
+		\end{center}
+		\item Le nombre de carré dans chacun des escaliers est le même et le rectangle contient $n\times (n+1)$ carrés. On a donc $2m=n(n+1)$, puis $m=\frac{n(n+1)}{2}$.
+		\item La boucle est ici inutile car on peut obtenir le résultat de manière algébrique facilement. Si $n$ est très grand, la boucle risque de prendre beaucoup de temps alors que le calcul de $\frac{n(n+1)}{2}$ restera beaucoup plus facile. Cet exemple montre qu'il est souvent plus judicieux d'essayer de simplifier un problème mathématiquement avant de se lancer dans une résolution purement informatique.
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Dans ce cas, $n=1$ convient.
+		\item \begin{enumerate}
+		\item Dans ce cas, on a $\frac{1}{2}<4^1=4<4^2=16<4^3=64<...$. Les valeurs de la forme par $4^n$ sont toutes strictement plus grande que $\frac{1}{2}$ et ainsi, il n'existe pas de valeur pour laquelle $a^n\leq b$.
+		\item Si $1\leq a$, on a $b<a\leq a^n$ pour tout entier $n$. Par ailleurs, si $a<1$, $a^n$ sera de plus en plus petit, se rapprochant de plus en plus de 0 et, éventuellement, on aura $a^n\leq b$.
+		\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 4cm]
+a = 0.9
+b = 0.02
+
+n = 1
+p = a
+while p > b:
+    n = n + 1
+    p = a * p
+\end{lstlisting}\end{varwidth}\end{center}
+\end{enumerate}
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+def maFonction(a,b):
+	if a <= b:
+		return 1
+	elif a < 1:
+		n = 1
+		p = a
+		while p > b:
+		    n = n + 1
+		    p = a * p
+		return n
+	else:
+		print("Toutes les puissances de a sont plus grandes que b!")
+		return None
+\end{lstlisting}\end{varwidth}\end{center}
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+def maFonction2(a,b):
+	if b <= a:
+		return 1
+	elif a > 1:
+		n = 1
+		p = a
+		while p < b:
+		    n = n + 1
+		    p = a * p
+		return n
+	else:
+		print("Toutes les puissances de a sont plus petites que b!")
+		return None
+\end{lstlisting}\end{varwidth}\end{center}
+\end{enumerate}
+\end{correction}
+
+
+
+\begin{correction}~
+	\begin{enumerate}
+		\item Un entier naturel est premier si et seulement il admet exactement deux diviseurs distincts: 1 et lui-même.
+		\item \texttt{(p\%k == 0)} vaut \texttt{True} si \texttt{k} est un diviseur de \texttt{p} et \texttt{False} sinon.
+		\item La fonction parcourt tous les nombres entiers de \texttt{2} jusqu'à \texttt{p-1}. Si \texttt{(p\%k == 0)} est vraie pour l'un d'entre eux, c'est-à-dire si \texttt{k} est un diviseur de \texttt{p}, la fonction renvoie \texttt{False} puisque cela signifie que \texttt{p} possède un diviseur strictement compris entre \texttt{1} et \texttt{p} et donc que \texttt{p} n'est pas premier. Réciproquement, si \texttt{(p\%k == 0)} est faux pour toutes les valeurs des \texttt{k} prises dans la boucle, cela signifie que les seuls diviseurs de \texttt{p} sont \texttt{1} et \texttt{p}, et donc que \texttt{p} est premier. Dans ce cas, la boucle se termine et la fonction renvoie \texttt{True}.
+		\item Le code précédent s'appuie sur le fait que, pour $p>1$, $p$ est premier si et seulement si, aucun $k\in\intent{2}{p-1}$ ne divise $p$. On montre ici qu'on a également $p$ premier si et seulement si, $k$ ne divise $p$ pour aucun $k\in\intent{2}{p-1}$ tel que $k\leq \sqrt{p}$. En effet, si un tel $k$ divise $p$ alors $p$ n'est pas premier. Réciproquement, si $p$ n'est pas premier, alors il existe $k\in\intent{2}{p-1}$ qui divise $p$. On écrit alors $p=k\times k'$. Dans ce cas, nécessairement $k\leq \sqrt{p}$ ou $k'\leq \sqrt{p}$. En effet, on aurait sinon $k>\sqrt{p}$ et $k'>\sqrt{p}$, puis $p=k\times k'>\sqrt{p}\times \sqrt{p}=p$, ce qui est impossible. Le résultat est donc bien démontré.
+		\item ~
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 7cm]
+def premier2(p):
+	n = int(sqrt(p))+1
+    for k in range(2,n):
+        if (p%k == 0):
+            return False
+    return True
+\end{lstlisting}\end{varwidth}\end{center}
+		\item On obtient \texttt{True} dans les deux cas.
+		\item Comme le nombre considéré est premier, les deux boucles tournent jusqu'au bout. Dans la fonction \texttt{premier1}, la boucle fait donc $999999935\approx 10^9$ tours alors que dans la fonction \texttt{premier2}, la boucle fait donc $\textnormal{E}(\sqrt{999999935})-1=31621\approx 3.16\times 10^4$ tours (où $\textnormal{E}(k)$ désigne la partie entière de $k$).
+		\item Dans ce cas, les deux boucles s'arrêtent au bout d'un seul tour puisque le nombre $999999938$ est divisible par $2$. De manière générale, le second programme est plus rapide que le premier lorsque l'on nombre que l'on étudie est premier mais il met le même temps lorsque celui-ci n'est pas premier. Comme on ne peut pas le savoir à l'avance (sinon ces fonctions n'auraient pas d'utilité), il vaut mieux utiliser le deuxième programme.
+	\end{enumerate}
+\end{correction}
+
+
+\begin{correction}~
+	\begin{enumerate}
+		\item ~
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 8cm]
+from random import *
+
+def lancer():
+    return randint(1,6)
+\end{lstlisting}\end{varwidth}\end{center}
+	\item ~
+\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 6cm]
+n = 1000
+n1 = 0
+n2 = 0
+n3 = 0
+n4 = 0
+n5 = 0
+n6 = 0
+
+for k in range(n):
+    x = lancer()
+    if x == 1:
+        n1 = n1 + 1
+    elif x == 2:
+        n2 = n2 + 1
+    elif x == 3:
+        n3 = n3 + 1
+    elif x == 4:
+        n4 = n4 + 1
+    elif x == 5:
+        n5 = n5 + 1
+    else:
+        n6 = n6 + 1
+\end{lstlisting}\end{varwidth}\end{center}
+	La simulation donne le résultat suivant (qui n'est pas le même a priori que celui que vous obtiendrez chez vous).
+		\begin{center}
+			\begin{tabular}{|c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|}
+				\hline
+				Face & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\\hline
+				Effectif & $166$& $167$ & $160$ & $193$ & $144$ & $170$ \\\hline
+			\end{tabular}
+		\end{center}
+	\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+def moyenne(n1,n2,n3,n4,n5,n6):
+    m = (1*n1+2*n2+3*n3+4*n4+5*n5+6*n6)/1000
+    return m
+\end{lstlisting}\end{varwidth}\end{center}	
+	\end{enumerate}
+\end{correction}
+
+
+
+\begin{correction}~
+\begin{enumerate}
+\item ~
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 6cm]
+from random import *
+
+def saut(x):
+    a = randint(0,1)
+    if a == 1:
+        return x+1
+    else:
+        return x-1\end{lstlisting}\end{varwidth}\end{center}
+\item ~
+		\begin{center}
+			\begin{varwidth}[t]{.5\textwidth}
+				\begin{lstlisting}[language=iPython,linewidth = 6cm]
+def deplacement(n):
+    x = 0
+    for k in range(n):
+        x = saut(x)
+    return x\end{lstlisting}\end{varwidth}\end{center}
+\item Comme la puce fait des sauts entiers, sa position correspond toujours à un entier. Par ailleurs, si la puce fait 4 sauts en partant de la position $x=0$, sa position est forcément comprise entre $-4$ (dans le cas où elle ne saute que vers la gauche) et $4$ (dans le cas où elle ne saute que vers la droite). Enfin, on remarque que la position de la puce a forcément une valeur impaire après un nombre impair de sauts et une valeur paire après un nombre pair de sauts.
+\item La simulation donne les valeurs suivantes (qui n'est pas le même a priori que celui que vous obtiendrez chez vous).
+\begin{center}
+	\begin{tabular}{|c|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{1cm}|}
+		\hline
+		$x$ & $-4$ & $-2$ & $0$ & $2$ & $4$ \\\hline
+		Effectif & 3 & 10 & 5 & 2 & 0 \\\hline
+	\end{tabular}
+\end{center}
+\item Pour la simulation qui précède, on trouve une moyenne égale à $-1,4$.
+\item ~
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+n_m4=0
+n_m2=0
+n_0=0
+n_p2=0
+n_p4=0
+n=1000000
+
+for k in range(n):
+    x = deplacement(4)
+    if x == -4:
+        n_m4 = n_m4 + 1
+    elif x == -2:
+        n_m2 = n_m2 + 1
+    elif x == 0:
+        n_0 = n_0 + 1
+    elif x == 2:
+        n_p2 = n_p2 + 1
+    else:
+        n_p4 = n_p4 + 1
+
+print(n_m4/n,n_m2/n,n_0/n,n_p2/n,n_p4/n)
+\end{lstlisting}\end{varwidth}\end{center}
+\begin{center}
+	\begin{tabular}{|c|C{1.8cm}|C{1.8cm}|C{1.8cm}|C{1.8cm}|C{1.8cm}|}
+		\hline
+		$x$ & $-4$ & $-2$ & $0$ & $2$ & $4$ \\\hline
+		Fréquence & $0,06224$ & $0,249374$ & $0,37557$ & $0,250063$ & $0,062753$ \\\hline
+	\end{tabular}
+\end{center}
+\item On peut calculer la moyenne facilement à partir des valeurs obtenues via la simulation en calculant \texttt{moy = (-4*n\_m4-2*n\_m2+0*n\_0+2*n\_p2+4*n\_p4)/n}. On trouve ici une position moyenne égale à $0,00343$.
+\end{enumerate}
+\end{correction}

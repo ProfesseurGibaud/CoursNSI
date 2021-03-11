@@ -1,0 +1,245 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,fleqn]{report} % Default font size, left-justified equations, chapters start on any page
+
+%----------------------------------------------------------------------------------------
+\input{structure}
+\input{structureSG} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\pageDeGarde
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+\pagestyle{empty} % No headers
+
+\clearpage
+\setcounter{page}{1}
+
+%\tableofcontents % Print the table of contents itself
+%
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\setcounter{chapter}{0}
+
+\include{AlgoProgrammation1}
+
+\include{AlgoProgrammation2}
+
+
+
+
+
+\chapter{Une Introduction à la Programmation Orientée Objet : Les Classes et les Objets}
+
+\section{Concept : Programmation Orientée Objet}
+
+
+	Il consiste en la définition et l'interaction de briques logicielles appelées objets ; un objet représente un concept, une idée ou toute entité du monde physique, comme une voiture, une personne ou encore une page d'un livre. Il possède une structure interne et un comportement, et il sait interagir avec ses pairs. Il s'agit donc de représenter ces objets et leurs relations ; l'interaction entre les objets via leurs relations permet de concevoir et réaliser les fonctionnalités attendues, de mieux résoudre le ou les problèmes. Dès lors, l'étape de modélisation revêt une importance majeure et nécessaire pour la POO. C'est elle qui permet de transcrire les éléments du réel sous forme virtuelle.\\
+
+
+Beaucoup des types que nous découvrirons dans le prochain chapitre sont considérés comme des \textbf{Classes} en Python. Par exemple, les listes, dictionnaires, chaîne de caractère.
+
+À la place de manipuler des Classes/types directement donnés par Python. On peut créer directement les objets/types qui nous intéressent. \\
+
+Un bel exemple d'utilisation de Programmation Orientée Objet est la simulation de foule. Une vidéo de la chaîne Fouloscopie (\href{https://www.youtube.com/watch?v=w-Oy4TYDnoQ}{https://www.youtube.com/watch?v=w-Oy4TYDnoQ}) vulgarise bien ce concept. 
+
+
+\section{Création d'une Classe}
+
+
+Pour créer une nouvelle Classe, on fait : (la nouvelle classe est Eleve)
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 4cm]
+class Eleve:
+\end{lstlisting}
+\end{varwidth}\end{center}
+
+
+\section{Attributs}
+
+Comme dit précédemment, \textbf{les Classes/Objets} sont utiles pour réaliser des modélisations. On va prendre le problème de modélisation suivant : on veut modéliser des élèves de Seconde qui veulent partir en Première générale, afin de pouvoir faire un programme qui propose des répartitions d'élèves dans des classes. 
+
+Première question : Que faut-il pour caractériser un tel élève ... On posera qu'il faut connaître :
+\begin{itemize}
+	\item Son nom
+	\item Son sexe
+	\item Ses voeux de spécialité.
+\end{itemize} 
+
+Ces caractéristiques sont appelés \textbf{Attributs} de la Classe. Pour ajouter des attributs, on aura besoin d'un constructeur. Ce constructeur est la fonction/méthode : \textbf{\_\_init\_\_}.
+
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+class Eleve:
+	def __init__(self):
+		self.nom = "Mettre un Nom"
+		self.sexe = "Adolescent"
+		self.specialite = []
+\end{lstlisting}
+\end{varwidth}\end{center}
+
+\begin{definition}
+	Un objet est une instance d'une classe \emph{i.e.} tout comme "babar" est une instance d'une chaîne de caractère. Un objet sera une instance d'une classe.
+\end{definition}
+
+ On veut créer un objet élève avec les attributs : "Kévin", "Homme", ["Math","NSI","SES"] on va affecter à une variable NouvelEleve un objet de type Eleve. et affecter à chaque attribut la valeur correspondante. Tout d'abord on crée l'objet NouvelEleve. 
+
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 6cm]
+PremierEleve = Eleve()\end{lstlisting}
+\end{varwidth}\hspace{2cm} \begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 6cm]
+PremierEleve = Eleve()\end{lstlisting}
+\end{varwidth}\end{center}
+
+Regardons maintenant ses attributs. Les attributs d'un objet sont des variables, don cpour les observer On entre dans la console : (les $>>>$ représente ce que la console renvoie)
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+PremierEleve.nom 
+>>> "Mettre un Nom"  
+PremierEleve.sexe
+>>> "Adolescent"
+PremierEleve.specialite
+>>> []\end{lstlisting}
+\end{varwidth}\end{center}
+
+Pour modifier cet attribut, on entre dans la console : 
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=Pseudo,linewidth = 12cm]
+PremierEleve = Eleve()
+PremierEleve.nom = "Kevin"
+PremierEleve.sexe = "Homme"
+PremierEleve.specialite = ["Math","NSI","SES"]
+		\end{lstlisting}
+\end{varwidth}\end{center}
+
+
+
+
+On sait que \textbf{\_\_init\_\_} est une fonction. Donc elle prend une entrée. Ici l'entrée est \textit{self}. Ce dernier représente l'objet. \\
+
+Pour voir les attribut de l'Objet PremierEleve maintenant, j'entre de nouveau dans la console : 
+
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+PremierEleve.nom 
+>>> "Kevin"  
+PremierEleve.sexe
+>>> "Homme"
+PremierEleve.specialite
+>>> ["Math","NSI","SES"]\end{lstlisting}
+\end{varwidth}\end{center}
+
+
+\begin{exercise}
+	L'objectif de cet exercice est de faire une classe Prof et de créer deux Objets : Gorce et Gibaud avec les bons attributs.
+	\begin{enumerate}
+		\item Trouvez les caractéristiques d'un professeur de lycée (sur papier).
+		\item Définir la classe Professeur (avec son constructeur)
+		\item Créer deux variables de type Professeur. Une variable sera Gibaud, l'autre Gorce.
+		\item Changer les attributs de ces deux fonctions pour que Gibaud et Gorce aient les bons attributs
+	\end{enumerate}
+\end{exercise}
+
+\section{Les Méthodes}
+
+Toute la beauté de la programmation orientée objet est que les objets ont : 
+\begin{itemize}
+	\item des caractéristiques appelés \textbf{Attributs}
+	\item des actions/fonctions appelés \textbf{Méthodes}
+\end{itemize}
+
+Les méthodes sont des fonctions internes à une Classe. Cela permet aux objets d'agir et d'interagir entre eux.
+
+Pour faire une méthode (ici DirePresent ou \_\_init\_\_ )on entre dans la console :
+
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+class Eleve:
+	def __init__(self):
+		self.nom = "Entrer un nom"
+		self.sexe = "Adolescent"
+		self.voeux = []
+	
+	def DirePresent(self):
+		print(self.nom + " Present !") \end{lstlisting}
+\end{varwidth}\end{center}
+
+\begin{remark}
+	\textbf{Toutes les méthodes prennent au moins \underline{self} en entrée}
+\end{remark}
+
+Pour appeler cette méthode, on doit déjà créer l'objet puis appeler la méthode. (on va changer l'attribut d'abord). On entre alors dans la console, l'appel de la méthode est en ligne 5 : 
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+SecondEleve = Eleve()
+SecondeEleve.nom = "Isma"
+SecondEleve.sexe = "Femme"
+SecondEleve.voeux = ["Math","NSI","HLP"]
+SecondEleve.DirePresent()
+>>> "Isma Present !"\end{lstlisting}
+\end{varwidth}\end{center}
+
+\begin{remark}
+	Pour qu'un objet appelle une méthode on met un $\bullet$ entre l'objet et la méthode. Comme la méthode est une fonction on met des parenthèses avec les arguments après la méthode. Si la méthode ne prend que \textit{self} on met des parenthèses vides.
+\end{remark}
+
+Cependant les méthodes peuvent être plus compliquées et faire des actions plus complexes. Par exemple \textbf{\_\_init\_\_} est une méthode ou \textbf{append} qui est une méthode pour les liste et qui permet d'ajouter un élément à la fin d'une liste.
+
+On pourrait avoir le suivant :  \\
+
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+\begin{lstlisting}[language=iPython,linewidth = 12cm]
+class Eleve:
+	def __init__(self):
+		self.nom = "Entrer un nom"
+		self.sexe = "Adolescent"
+		self.voeux = []
+	def DirePresent(self,Phrase):
+		print(Phrase) \end{lstlisting}
+\end{varwidth}\end{center}
+
+On aurait alors comme appel de DirePresent : 
+\begin{center}
+	\begin{varwidth}[t]{.5\textwidth}
+		\begin{lstlisting}[language=iPython,linewidth = 12cm]
+SecondEleve = Eleve()
+SecondeEleve.nom = "Isma"
+SecondEleve.sexe = "Femme"
+SecondEleve.voeux = ["Math","NSI","HLP"]
+SecondEleve.DirePresent("Je suis ici, Monsieur.")
+>>> "Je suis ici, Monsieur"\end{lstlisting}
+\end{varwidth}\end{center}
+
+On remarque cette fois DirePresent prend un argument en entrée. Cet argument est le \textit{Phrase} de \textit{def DirePresent(self,Phrase)}
+
+
+%\include{Correction}
+
+
+\end{document}
